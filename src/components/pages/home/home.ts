@@ -1,3 +1,5 @@
+import './home.scss';
+
 import createElement from '../../../utils/createElement';
 
 class Home {
@@ -5,8 +7,10 @@ class Home {
     const container = createElement('div', { class: 'home-page' });
 
     container.innerHTML = `
-      <h2>Главная страница</h2>
-      <a href="#/toys">Начать</a>
+      <a class="home-page__link" href="#/toys">
+        <h1 class="home-page__title">Помогите бабушке нарядить ёлку</h1>
+      </a>
+      <div class="home-page__overlay"></div>
     `;
 
     return container;
