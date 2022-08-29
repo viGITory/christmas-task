@@ -1,3 +1,6 @@
+import './toys.scss';
+
+import header from '../../header/header';
 import ValueFilters from '../../valueFilters/valueFilters';
 import ToyCard from '../../toyCard/toyCard';
 
@@ -18,22 +21,8 @@ class Toys {
     const cards = createElement('div', { class: 'toys-page__cards' });
     const valueFilters = new ValueFilters(this.data).render();
 
-    container.innerHTML = `
-      <a class="logo" href="#/">Лого</a>
-      <nav>
-        <ul>
-          <li>
-            <a href="#/toys">Игрушки</a>
-          </li>
-          <li>
-            <a href="#/tree">Ёлка</a>
-          </li>
-        </ul>
-      </nav>
-    `;
-
     this.data.forEach((item) => cards.append(new ToyCard(item).render()));
-    container.append(valueFilters, cards);
+    container.append(header.render(), valueFilters, cards);
 
     valueFilters.addEventListener('input', () => {
       cards.innerHTML = '';
