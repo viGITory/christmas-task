@@ -17,22 +17,27 @@ class Toys {
   }
 
   render = () => {
-    const container = createElement('div', { class: 'toys-page' });
-    const cards = createElement('div', { class: 'toys-page__cards' });
+    const page = createElement('div', { class: 'toys-page' });
+    const mainContainer = createElement('main', { class: 'toys-page__main' });
+    const leftContainer = createElement('section', { class: 'toys-page__left' });
     const valueFilters = new ValueFilters(this.data).render();
+    const cardsContainer = createElement('section', { class: 'toys-page__cards' });
 
-    this.data.forEach((item) => cards.append(new ToyCard(item).render()));
-    container.append(header.render(), valueFilters, cards);
+    this.data.forEach((item) => cardsContainer.append(new ToyCard(item).render()));
 
     valueFilters.addEventListener('input', () => {
-      cards.innerHTML = '';
+      cardsContainer.innerHTML = '';
 
       filterByValue(this.data).forEach((item) => {
-        cards.append(new ToyCard(item).render());
+        cardsContainer.append(new ToyCard(item).render());
       });
     });
 
-    return container;
+    leftContainer.append(valueFilters);
+    mainContainer.append(leftContainer, cardsContainer);
+    page.append(header.render(), mainContainer);
+
+    return page;
   };
 }
 

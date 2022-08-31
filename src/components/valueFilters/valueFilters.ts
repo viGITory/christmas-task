@@ -1,3 +1,5 @@
+import './valueFilters.scss';
+
 import { IToyCard, TValueFilter } from '../../types';
 import appState from '../../appState';
 
@@ -11,7 +13,11 @@ class ValueFilters {
   }
 
   createFilterGroup = (description: string, filterType: TValueFilter) => {
-    const container = createElement('div', { class: 'value-filters__group' }, [description]);
+    const container = createElement(
+      'div',
+      { class: `value-filters__group value-filters__group--${filterType}` },
+      [description]
+    );
     const isFavoriteFilter = filterType === 'favorite';
     const filterValues = [
       ...new Set(this.data.map((item) => !isFavoriteFilter && item[filterType])),

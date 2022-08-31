@@ -1,0 +1,148 @@
+.value-filters {
+
+  &__title {
+    margin-bottom: 3rem;
+
+    font-family: Neucha, sans-serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-shadow: 0 0 0.1rem #000;
+  }
+
+  &__group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    min-height: 4rem;
+
+    text-shadow: 0 0 0.1rem #000;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    appearance: none;
+  }
+
+  &__group--shape > &__button,
+  &__group--size > &__button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.2;
+
+    transition: opacity 0.2s;
+
+    &:checked {
+      opacity: 1;
+    }
+  }
+
+  &__group--shape > &__button {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &__group--shape > &__button:nth-child(1) {
+    background-image: url("assets/svg/ball.svg");
+  }
+
+  &__group--shape > &__button:nth-child(2) {
+    background-image: url("assets/svg/toy.svg");
+  }
+
+  &__group--shape > &__button:nth-child(3) {
+    background-image: url("assets/svg/bell.svg");
+  }
+
+  &__group--shape > &__button:nth-child(4) {
+    background-image: url("assets/svg/cone.svg");
+  }
+
+  &__group--shape > &__button:nth-child(5) {
+    background-image: url("assets/svg/snowflake.svg");
+  }
+
+  &__group--color > &__button,
+  &__group--favorite > &__button {
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 0 0.1rem #000;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      font-size: 1.6rem;
+      color: #fff;
+
+      content: "✓";
+      opacity: 0;
+      transition: opacity 0.2s;
+      transform: translate(-50%, -50%);
+    }
+
+    &:checked {
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__group--color > &__button:nth-child(1),
+  &__group--color > &__button:nth-child(4) {
+
+    &::after {
+      color: #2a668b;
+    }
+  }
+
+  &__group--color > &__button:nth-child(1) {
+    background-color: #fdd700;
+  }
+
+  &__group--color > &__button:nth-child(2) {
+    background-color: #08aa05;
+  }
+
+  &__group--color > &__button:nth-child(3) {
+    background-color: #fd0000;
+  }
+
+  &__group--color > &__button:nth-child(4) {
+    background-color: #fff;
+  }
+
+  &__group--color > &__button:nth-child(5) {
+    background-color: #2199eb;
+  }
+
+  &__group--size > &__button:nth-child(1) {
+    width: 4rem;
+    height: 4rem;
+    background-image: url("assets/svg/ball.svg");
+  }
+
+  &__group--size > &__button:nth-child(2) {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-image: url("assets/svg/ball.svg");
+  }
+
+  &__group--size > &__button:nth-child(3) {
+    width: 3rem;
+    height: 3rem;
+    background-image: url("assets/svg/ball.svg");
+  }
+
+  &__group--favorite > &__button {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}

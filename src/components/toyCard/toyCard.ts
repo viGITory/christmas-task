@@ -1,3 +1,5 @@
+import './toyCard.scss';
+
 import { IToyCard } from '../../types';
 
 import createElement from '../../utils/createElement';

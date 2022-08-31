@@ -8,4 +8,24 @@
   background-position: center;
   background-size: cover;
   background-blend-mode: multiply;
+
+  &__left {
+    padding-top: 2rem;
+  }
+
+  &__main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    max-width: 144rem;
+    padding: 0 2rem 2rem;
+    margin: 0 auto;
+  }
+
+  &__cards {
+    display: grid;
+    flex-grow: 1;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
 }
