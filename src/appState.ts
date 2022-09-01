@@ -6,6 +6,7 @@ const appState = {
     favorite: false,
   },
   sorting: '',
+  search: '',
 };
 
 export default appState;
