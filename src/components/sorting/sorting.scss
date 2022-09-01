@@ -1,0 +1,41 @@
+.sorting {
+
+  &__title,
+  &__select {
+    font-weight: 400;
+  }
+
+  &__title {
+    margin-bottom: 3rem;
+
+    font-family: Neucha, sans-serif;
+    font-size: 2.4rem;
+    text-shadow: 0 0 0.1rem #000;
+  }
+
+  &__select {
+    height: 4rem;
+    padding: 1.2rem 2.5rem 1rem 1rem;
+
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: #fff;
+
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+    background-image: url("assets/svg/arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem auto;
+    border: 0;
+    border-radius: 0.5rem;
+    outline: none;
+    box-shadow: 0 0 0.1rem #000;
+    appearance: none;
+    backdrop-filter: blur(1rem);
+  }
+
+  &__option {
+    background-color: #2a668b;
+  }
+}

@@ -5,6 +5,7 @@ const appState = {
     size: new Set(),
     favorite: false,
   },
+  sorting: '',
 };
 
 export default appState;
