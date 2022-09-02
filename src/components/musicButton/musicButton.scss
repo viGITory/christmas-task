@@ -1,0 +1,18 @@
+.music-button {
+  width: 4rem;
+  height: 4rem;
+
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url("assets/svg/audio.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 0;
+  opacity: 0.2;
+
+  transition: opacity 0.2s;
+
+  &--active {
+    opacity: 1;
+  }
+}

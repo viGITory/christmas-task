@@ -1,6 +1,9 @@
 import './toys.scss';
 
+import Snowfall from '../../snowfall/snowfall';
 import header from '../../header/header';
+import MusicButton from '../../musicButton/musicButton';
+import SnowButton from '../../snowButton/snowButton';
 import Search from '../../search/search';
 import ValueFilters from '../../valueFilters/valueFilters';
 import Sorting from '../../sorting/sorting';
@@ -22,14 +25,22 @@ class Toys {
 
   render = () => {
     const page = createElement('div', { class: 'toys-page' });
-    const mainContainer = createElement('main', { class: 'toys-page__main' });
+    const snowfall = new Snowfall();
     const leftContainer = createElement('section', { class: 'toys-page__left' });
+    const topLeftWrapper = createElement('div', { class: 'toys-page__left-wrapper' });
+    const musicButton = new MusicButton().render();
+    const snowButton = new SnowButton().render();
     const search = new Search().render();
     const valueFilters = new ValueFilters(this.data).render();
     const sorting = new Sorting().render();
+    const mainContainer = createElement('main', { class: 'toys-page__main' });
     const cardsContainer = createElement('section', { class: 'toys-page__cards' });
 
     this.data.forEach((item) => cardsContainer.append(new ToyCard(item).render()));
+
+    snowButton.addEventListener('click', () => {
+      snowfall.toggleShow();
+    });
 
     search.addEventListener('input', () => {
       cardsContainer.innerHTML = '';
@@ -60,9 +71,10 @@ class Toys {
       });
     });
 
-    leftContainer.append(search, valueFilters, sorting);
+    topLeftWrapper.append(musicButton, snowButton, search);
+    leftContainer.append(topLeftWrapper, valueFilters, sorting);
     mainContainer.append(leftContainer, cardsContainer);
-    page.append(header.render(), mainContainer);
+    page.append(snowfall.render(), header.render(), mainContainer);
 
     return page;
   };
