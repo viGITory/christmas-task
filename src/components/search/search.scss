@@ -1,10 +1,13 @@
 .search {
+  width: 100%;
+  max-width: 25rem;
   height: 4rem;
   padding: 1.2rem 3rem 1rem 1rem;
 
   font-family: inherit;
   font-size: 1.6rem;
   color: #fff;
+  text-shadow: 0 0 0.1rem #000;
 
   background-color: rgba(255, 255, 255, 0.2);
   background-image: url("assets/svg/search.svg");
@@ -15,10 +18,10 @@
   border-radius: 0.5rem;
   outline: none;
   box-shadow: 0 0 0.1rem #000;
-  appearance: none;
   backdrop-filter: blur(1rem);
 
   &::placeholder {
     color: inherit;
+    opacity: 1;
   }
 }

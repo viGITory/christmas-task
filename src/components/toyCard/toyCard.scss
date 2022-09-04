@@ -1,9 +1,10 @@
 .toy-card {
   position: relative;
+  height: max-content;
   padding: 2rem;
 
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0.5rem;
   box-shadow: 0 0 0.1rem #000;
   backdrop-filter: blur(1rem);
@@ -16,6 +17,8 @@
 
   &__title,
   &__props-item {
+    position: relative;
+    z-index: 1;
     text-shadow: 0 0 0.1rem #000;
   }
 
@@ -42,7 +45,6 @@
     position: absolute;
     right: 0;
     bottom: 2rem;
-    z-index: -1;
     display: block;
     width: auto;
     height: 70%;

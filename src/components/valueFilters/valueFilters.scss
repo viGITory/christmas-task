@@ -36,6 +36,10 @@
 
     transition: opacity 0.2s;
 
+    &:hover {
+      opacity: 0.6;
+    }
+
     &:checked {
       opacity: 1;
     }
@@ -124,6 +128,32 @@
     background-color: #2199eb;
   }
 
+  &__group--color > &__button {
+
+    &::before {
+      position: absolute;
+      top: -1rem;
+      left: 50%;
+      width: 0.5rem;
+      height: 0.5rem;
+
+      content: "";
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      opacity: 0;
+
+      transition: opacity 0.2s;
+      transform: translateX(-50%);
+    }
+
+    &:hover {
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
   &__group--size > &__button:nth-child(1) {
     width: 4rem;
     height: 4rem;
@@ -144,5 +174,11 @@
 
   &__group--favorite > &__button {
     background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1rem);
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
   }
 }
