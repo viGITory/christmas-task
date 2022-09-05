@@ -15,7 +15,7 @@ class Search {
 
     container.addEventListener('input', () => {
       if (container instanceof HTMLInputElement) {
-        appState.search = container.value;
+        appState.search = container.value.trim();
       }
     });
 
