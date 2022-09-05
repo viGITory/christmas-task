@@ -28,15 +28,17 @@ class ValueFilters {
         class: 'value-filters__button',
         type: 'checkbox',
         'aria-label': `${isFavoriteFilter ? 'Любимые игрушки' : `${description} ${value}`}`,
-      }) as HTMLInputElement;
+      });
 
-      checkbox.addEventListener('input', () =>
-        isFavoriteFilter
-          ? (appState.filters.favorite = checkbox.checked)
-          : checkbox.checked && !appState.filters[filterType].has(value)
-          ? appState.filters[filterType].add(value)
-          : appState.filters[filterType].delete(value)
-      );
+      checkbox.addEventListener('input', () => {
+        if (checkbox instanceof HTMLInputElement) {
+          isFavoriteFilter
+            ? (appState.filters.favorite = checkbox.checked)
+            : checkbox.checked && !appState.filters[filterType].has(value)
+            ? appState.filters[filterType].add(value)
+            : appState.filters[filterType].delete(value);
+        }
+      });
 
       container.append(checkbox);
     });

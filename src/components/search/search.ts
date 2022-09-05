@@ -11,10 +11,12 @@ class Search {
       placeholder: 'Поиск',
       autocomplete: 'off',
       autofocus: '',
-    }) as HTMLInputElement;
+    });
 
     container.addEventListener('input', () => {
-      appState.search = container.value;
+      if (container instanceof HTMLInputElement) {
+        appState.search = container.value;
+      }
     });
 
     return container;

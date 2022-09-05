@@ -9,7 +9,7 @@ class Sorting {
   select;
 
   constructor() {
-    this.select = createElement('select', { class: 'sorting__select' }) as HTMLSelectElement;
+    this.select = createElement('select', { class: 'sorting__select' });
 
     this.addListeners();
   }
@@ -35,7 +35,9 @@ class Sorting {
 
   addListeners = () => {
     this.select.addEventListener('change', () => {
-      appState.sorting = this.select.value;
+      if (this.select instanceof HTMLSelectElement) {
+        appState.sorting = this.select.value;
+      }
     });
   };
 }
