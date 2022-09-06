@@ -10,5 +10,6 @@ interface IToyCard {
 }
 
 type TValueFilter = 'shape' | 'color' | 'size' | 'favorite';
+type TObserver = () => void;
 
-export { IToyCard, TValueFilter };
+export { IToyCard, TValueFilter, TObserver };

@@ -1,6 +1,8 @@
 import './search.scss';
 
 import createElement from '../../utils/createElement';
+import appStateSubject from '../../subject';
+
 import appState from '../../appState';
 
 class Search {
@@ -16,6 +18,7 @@ class Search {
     container.addEventListener('input', () => {
       if (container instanceof HTMLInputElement) {
         appState.search = container.value.trim();
+        appStateSubject.notify();
       }
     });
 

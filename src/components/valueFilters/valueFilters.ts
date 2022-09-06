@@ -4,6 +4,7 @@ import { IToyCard, TValueFilter } from '../../types';
 import appState from '../../appState';
 
 import createElement from '../../utils/createElement';
+import appStateSubject from '../../subject';
 
 class ValueFilters {
   data;
@@ -37,6 +38,8 @@ class ValueFilters {
             : checkbox.checked && !appState.filters[filterType].has(value)
             ? appState.filters[filterType].add(value)
             : appState.filters[filterType].delete(value);
+
+          appStateSubject.notify();
         }
       });
 

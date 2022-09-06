@@ -13,6 +13,7 @@ import createElement from '../../../utils/createElement';
 import searchToy from '../../../utils/searchToy';
 import filterByValue from '../../../utils/filterByValue';
 import sortData from '../../../utils/sortData';
+import appStateSubject from '../../../subject';
 
 import decorations from '../../../data/decorations';
 
@@ -25,6 +26,8 @@ class Toys {
     this.data = decorations;
 
     this.cardsContainer = createElement('section', { class: 'toys-page__cards' });
+
+    appStateSubject.subscribe(this.renderCards);
   }
 
   renderCards = () => {
@@ -60,18 +63,6 @@ class Toys {
 
     snowButton.addEventListener('click', () => {
       snowfall.toggleShow();
-    });
-
-    search.addEventListener('input', () => {
-      this.renderCards();
-    });
-
-    valueFilters.addEventListener('input', () => {
-      this.renderCards();
-    });
-
-    sorting.addEventListener('change', () => {
-      this.renderCards();
     });
 
     topLeftWrapper.append(musicButton, snowButton, search);
