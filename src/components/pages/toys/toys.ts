@@ -7,12 +7,14 @@ import SnowButton from '../../snowButton/snowButton';
 import Search from '../../search/search';
 import ValueFilters from '../../valueFilters/valueFilters';
 import Sorting from '../../sorting/sorting';
+import RangeFilters from '../../rangeFilters/rangeFilters';
 import ToyCard from '../../toyCard/toyCard';
 
 import createElement from '../../../utils/createElement';
 import searchToy from '../../../utils/searchToy';
 import filterByValue from '../../../utils/filterByValue';
 import sortData from '../../../utils/sortData';
+import filterByRange from '../../../utils/filterByRange';
 import appStateSubject from '../../../subject';
 
 import decorations from '../../../data/decorations';
@@ -34,7 +36,7 @@ class Toys {
     while (this.cardsContainer.firstChild)
       this.cardsContainer.removeChild(this.cardsContainer.firstChild);
 
-    searchToy(sortData(filterByValue(this.data))).forEach((item) => {
+    searchToy(sortData(filterByValue(filterByRange(this.data)))).forEach((item) => {
       this.cardsContainer.append(new ToyCard(item).render());
     });
 
@@ -56,6 +58,7 @@ class Toys {
     const snowButton = new SnowButton().render();
     const search = new Search().render();
     const valueFilters = new ValueFilters(this.data).render();
+    const rangeFilters = new RangeFilters(this.data).render();
     const sorting = new Sorting().render();
     const mainContainer = createElement('main', { class: 'toys-page__main' });
 
@@ -66,7 +69,7 @@ class Toys {
     });
 
     topLeftWrapper.append(musicButton, snowButton, search);
-    leftContainer.append(topLeftWrapper, valueFilters, sorting);
+    leftContainer.append(topLeftWrapper, valueFilters, rangeFilters, sorting);
     mainContainer.append(leftContainer, this.cardsContainer);
     page.append(snowfall.render(), header.render(), mainContainer);
 

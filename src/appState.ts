@@ -7,6 +7,16 @@ const appState = {
   },
   sorting: '',
   search: '',
+  range: {
+    count: {
+      min: 0,
+      max: 0,
+    },
+    year: {
+      min: 0,
+      max: 0,
+    },
+  },
 };
 
 export default appState;

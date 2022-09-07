@@ -9,7 +9,15 @@ interface IToyCard {
   favorite: boolean;
 }
 
+interface IRangeProps {
+  type: 'count' | 'year';
+  step: number;
+  minValue: number;
+  maxValue: number;
+  title: string;
+}
+
 type TValueFilter = 'shape' | 'color' | 'size' | 'favorite';
 type TObserver = () => void;
 
-export { IToyCard, TValueFilter, TObserver };
+export { IToyCard, IRangeProps, TValueFilter, TObserver };
