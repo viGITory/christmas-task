@@ -1,7 +1,7 @@
 import './search.scss';
 
 import createElement from '../../utils/createElement';
-import appStateSubject from '../../subject';
+import { appStateSubject } from '../../subject';
 
 import appState from '../../appState';
 

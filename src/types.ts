@@ -1,3 +1,9 @@
+import * as noUiSlider from 'nouislider';
+
+type TValueFilter = 'shape' | 'color' | 'size' | 'favorite';
+type TRangeType = 'count' | 'year';
+type TObserver = () => void;
+
 interface IToyCard {
   num: string;
   name: string;
@@ -10,14 +16,18 @@ interface IToyCard {
 }
 
 interface IRangeProps {
-  type: 'count' | 'year';
+  type: TRangeType;
   step: number;
   minValue: number;
   maxValue: number;
   title: string;
 }
 
-type TValueFilter = 'shape' | 'color' | 'size' | 'favorite';
-type TObserver = () => void;
+interface IRangeGroup {
+  slider: noUiSlider.API | undefined;
+  type: TRangeType;
+  minValueContainer: HTMLElement;
+  maxValueContainer: HTMLElement;
+}
 
-export { IToyCard, IRangeProps, TValueFilter, TObserver };
+export { IToyCard, IRangeProps, IRangeGroup, TValueFilter, TObserver };

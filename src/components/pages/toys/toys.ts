@@ -8,6 +8,7 @@ import Search from '../../search/search';
 import ValueFilters from '../../valueFilters/valueFilters';
 import Sorting from '../../sorting/sorting';
 import RangeFilters from '../../rangeFilters/rangeFilters';
+import resetFiltersButton from '../../resetFiltersButton/resetFiltersButton';
 import ToyCard from '../../toyCard/toyCard';
 
 import createElement from '../../../utils/createElement';
@@ -15,7 +16,7 @@ import searchToy from '../../../utils/searchToy';
 import filterByValue from '../../../utils/filterByValue';
 import sortData from '../../../utils/sortData';
 import filterByRange from '../../../utils/filterByRange';
-import appStateSubject from '../../../subject';
+import { appStateSubject } from '../../../subject';
 
 import decorations from '../../../data/decorations';
 
@@ -54,6 +55,7 @@ class Toys {
     const snowfall = new Snowfall();
     const leftContainer = createElement('section', { class: 'toys-page__left' });
     const topLeftWrapper = createElement('div', { class: 'toys-page__left-wrapper' });
+    const bottomLeftWrapper = createElement('div', { class: 'toys-page__left-wrapper' });
     const musicButton = new MusicButton().render();
     const snowButton = new SnowButton().render();
     const search = new Search().render();
@@ -69,7 +71,8 @@ class Toys {
     });
 
     topLeftWrapper.append(musicButton, snowButton, search);
-    leftContainer.append(topLeftWrapper, valueFilters, rangeFilters, sorting);
+    bottomLeftWrapper.append(resetFiltersButton.render());
+    leftContainer.append(topLeftWrapper, valueFilters, sorting, rangeFilters, bottomLeftWrapper);
     mainContainer.append(leftContainer, this.cardsContainer);
     page.append(snowfall.render(), header.render(), mainContainer);
 

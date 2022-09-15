@@ -21,5 +21,6 @@ class Subject {
 }
 
 const appStateSubject = new Subject();
+const resetFiltersSubject = new Subject();
 
-export default appStateSubject;
+export { appStateSubject, resetFiltersSubject };

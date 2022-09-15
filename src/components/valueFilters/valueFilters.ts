@@ -4,14 +4,28 @@ import { IToyCard, TValueFilter } from '../../types';
 import appState from '../../appState';
 
 import createElement from '../../utils/createElement';
-import appStateSubject from '../../subject';
+import { appStateSubject, resetFiltersSubject } from '../../subject';
 
 class ValueFilters {
   data;
 
+  filters: HTMLElement[];
+
   constructor(data: IToyCard[]) {
     this.data = data;
+    this.filters = [];
+
+    resetFiltersSubject.subscribe(this.resetFilters);
   }
+
+  resetFilters = () => {
+    this.filters.forEach((item) => {
+      if (item instanceof HTMLInputElement) {
+        const checkbox = item;
+        checkbox.checked = false;
+      }
+    });
+  };
 
   createFilterGroup = (description: string, filterType: TValueFilter) => {
     const container = createElement(
@@ -42,6 +56,8 @@ class ValueFilters {
           appStateSubject.notify();
         }
       });
+
+      this.filters.push(checkbox);
 
       container.append(checkbox);
     });

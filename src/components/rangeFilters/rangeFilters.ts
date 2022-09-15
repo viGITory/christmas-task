@@ -3,18 +3,47 @@ import './rangeFilters.scss';
 
 import * as noUiSlider from 'nouislider';
 
-import { IToyCard, IRangeProps } from '../../types';
+import { IToyCard, IRangeProps, IRangeGroup } from '../../types';
 import appState from '../../appState';
 
 import createElement from '../../utils/createElement';
-import appStateSubject from '../../subject';
+import { appStateSubject, resetFiltersSubject } from '../../subject';
 
 class RangeFilters {
   data;
 
+  filters: IRangeGroup[];
+
   constructor(data: IToyCard[]) {
     this.data = data;
+    this.filters = [];
+
+    resetFiltersSubject.subscribe(this.resetRange);
   }
+
+  resetRange = () => {
+    this.filters.forEach((item) => {
+      const { slider, type, minValueContainer, maxValueContainer }: IRangeGroup = item;
+
+      if (slider) {
+        slider.reset();
+
+        const values = slider.get();
+
+        if (Array.isArray(values)) {
+          const [min, max] = values;
+
+          minValueContainer.textContent = `${min}`;
+          maxValueContainer.textContent = `${max}`;
+
+          if (min) appState.range[type].min = +min;
+          if (max) appState.range[type].max = +max;
+        }
+      }
+    });
+
+    appStateSubject.notify();
+  };
 
   createFilterGroup = ({ type, step, minValue, maxValue, title }: IRangeProps) => {
     const container = createElement('div', { class: 'range-filters__item' });
@@ -60,6 +89,16 @@ class RangeFilters {
       });
     }
 
+    this.filters.push({
+      slider: slider.noUiSlider,
+      type,
+      minValueContainer,
+      maxValueContainer,
+    });
+
+    appState.range[type].min = minValue;
+    appState.range[type].max = maxValue;
+
     sliderWrapper.append(slider, minValueContainer, valuesSeparator, maxValueContainer);
     container.append(groupTitle, sliderWrapper);
 
@@ -71,11 +110,6 @@ class RangeFilters {
     const maxCount = Math.max(...this.data.map((item) => +item.count));
     const minYear = Math.min(...this.data.map((item) => +item.year));
     const maxYear = Math.max(...this.data.map((item) => +item.year));
-
-    appState.range.count.min = minCount;
-    appState.range.count.max = maxCount;
-    appState.range.year.min = minYear;
-    appState.range.year.max = maxYear;
 
     const container = createElement('div', { class: 'range-filters' });
     const title = createElement('h3', { class: 'range-filters__title' }, ['Фильтры по диапазону']);
