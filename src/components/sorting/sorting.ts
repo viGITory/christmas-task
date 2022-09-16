@@ -15,8 +15,12 @@ class Sorting {
     this.addListeners();
   }
 
-  render = () => {
-    const container = createElement('div', { class: 'sorting' }, ['Сортировка']);
+  render = (className?: string) => {
+    const container = createElement(
+      'div',
+      { class: className ? `${className} sorting` : 'sorting' },
+      ['Сортировать']
+    );
 
     Object.values(sortOptions).forEach((value) => {
       const option = createElement('option', { class: 'sorting__option', value: `${value}` }, [
@@ -26,9 +30,6 @@ class Sorting {
       this.select.append(option);
     });
 
-    container.innerHTML = `
-      <h3 class="sorting__title">Сортировка</h3>
-    `;
     container.append(this.select);
 
     return container;

@@ -13,7 +13,7 @@
     font-size: 1.4rem;
 
     &:not(:last-child) {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -69,18 +69,16 @@
 
   &__value,
   &__separator {
+    color: rgba(255, 255, 255, 0.2);
     text-shadow: none;
   }
 
   &__value {
     min-width: 4.5rem;
-
-    color: rgba(255, 255, 255, 0.6);
     text-align: center;
   }
 
   &__separator {
     padding: 0 0.5rem;
-    color: rgba(255, 255, 255, 0.2);
   }
 }

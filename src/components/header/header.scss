@@ -1,7 +1,11 @@
 .header {
   max-width: 144rem;
-  padding: 0 2rem;
   margin: 0 auto;
+
+  &,
+  &__nav-link {
+    padding: 1.5rem;
+  }
 
   &__nav-list {
     display: flex;
@@ -15,7 +19,6 @@
 
   &__nav-link {
     display: block;
-    padding: 2rem;
 
     color: rgba(255, 255, 255, 0.2);
     text-decoration: none;

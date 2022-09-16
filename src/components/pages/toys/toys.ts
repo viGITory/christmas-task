@@ -54,6 +54,7 @@ class Toys {
     const page = createElement('div', { class: 'toys-page' });
     const snowfall = new Snowfall();
     const leftContainer = createElement('section', { class: 'toys-page__left' });
+    const rightContainer = createElement('section', { class: 'toys-page__right' });
     const topLeftWrapper = createElement('div', { class: 'toys-page__left-wrapper' });
     const bottomLeftWrapper = createElement('div', { class: 'toys-page__left-wrapper' });
     const musicButton = new MusicButton().render();
@@ -61,7 +62,7 @@ class Toys {
     const search = new Search().render();
     const valueFilters = new ValueFilters(this.data).render();
     const rangeFilters = new RangeFilters(this.data).render();
-    const sorting = new Sorting().render();
+    const sorting = new Sorting().render('toys-page__sorting');
     const mainContainer = createElement('main', { class: 'toys-page__main' });
 
     this.renderCards();
@@ -73,7 +74,8 @@ class Toys {
     topLeftWrapper.append(musicButton, snowButton, search);
     bottomLeftWrapper.append(resetFiltersButton.render());
     leftContainer.append(topLeftWrapper, valueFilters, sorting, rangeFilters, bottomLeftWrapper);
-    mainContainer.append(leftContainer, this.cardsContainer);
+    rightContainer.append(sorting, this.cardsContainer);
+    mainContainer.append(leftContainer, rightContainer);
     page.append(snowfall.render(), header.render(), mainContainer);
 
     return page;

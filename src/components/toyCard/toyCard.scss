@@ -1,52 +1,66 @@
 .toy-card {
-  position: relative;
-  height: max-content;
-  padding: 2rem;
+  padding: 1.5rem;
+
+  text-shadow: 0 0 0.1rem #000;
 
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0.5rem;
   box-shadow: 0 0 0.1rem #000;
-  backdrop-filter: blur(1rem);
 
   transition: background-color 0.2s;
+  backdrop-filter: blur(1rem);
 
   &--active {
     background-color: rgba(255, 255, 255, 0.4);
   }
 
   &__title,
-  &__props-item {
-    position: relative;
-    z-index: 1;
-    text-shadow: 0 0 0.1rem #000;
+  &__count {
+    font-family: Neucha, sans-serif;
+    font-size: 2.2rem;
+  }
+
+  &__title,
+  &__wrapper {
+    margin-bottom: 1.5rem;
   }
 
   &__title {
-    margin-bottom: 3rem;
-
-    font-family: Neucha, sans-serif;
-    font-size: 2.4rem;
     font-weight: 400;
+    text-align: center;
   }
 
   &__props {
     list-style: none;
   }
 
+  &__props-item,
+  &__wrapper {
+    display: flex;
+  }
+
   &__props-item {
+    justify-content: space-between;
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
     }
   }
 
+  &__wrapper {
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
   &__image {
-    position: absolute;
-    right: 0;
-    bottom: 2rem;
     display: block;
-    width: auto;
-    height: 70%;
+    width: 10rem;
+    height: auto;
+
+    object-fit: contain;
   }
 }

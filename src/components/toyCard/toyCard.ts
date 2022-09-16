@@ -16,14 +16,20 @@ class ToyCard {
 
     container.innerHTML = `
       <h4 class="toy-card__title">${this.data.name}</h4>
-      <img class="toy-card__image" src="/assets/toys/${this.data.num}.png" alt="${this.data.name}">
+      <div class="toy-card__wrapper">
+        <img class="toy-card__image" src="/assets/toys/${this.data.num}.png" alt="${
+      this.data.name
+    }">
+        <span class="toy-card__count">${this.data.count} шт.</span>
+      </div>
       <ul class="toy-card__props">
-        <li class="toy-card__props-item">Количество: ${this.data.count}</li>
-        <li class="toy-card__props-item">Год покупки: ${this.data.year}</li>
-        <li class="toy-card__props-item">Форма: ${this.data.shape}</li>
-        <li class="toy-card__props-item">Цвет: ${this.data.color}</li>
-        <li class="toy-card__props-item">Размер: ${this.data.size}</li>
-        <li class="toy-card__props-item">Любимая: ${this.data.favorite ? 'да' : 'нет'}</li>
+        <li class="toy-card__props-item">Год покупки: <span>${this.data.year}</span></li>
+        <li class="toy-card__props-item">Форма: <span>${this.data.shape}</span></li>
+        <li class="toy-card__props-item">Цвет: <span>${this.data.color}</span></li>
+        <li class="toy-card__props-item">Размер: <span>${this.data.size}</span></li>
+        <li class="toy-card__props-item">Любимая: <span>${
+          this.data.favorite ? 'да' : 'нет'
+        }</span></li>
       </ul>
     `;
 
