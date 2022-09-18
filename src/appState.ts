@@ -17,6 +17,7 @@ const appState = {
       max: 0,
     },
   },
+  favorites: new Set(),
 };
 
 export default appState;

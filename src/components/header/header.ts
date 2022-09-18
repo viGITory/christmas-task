@@ -1,8 +1,24 @@
 import './header.scss';
 
 import createElement from '../../utils/createElement';
+import { favoritesSubject } from '../../subject';
+import appState from '../../appState';
 
 class Header {
+  favoritesContainer;
+
+  constructor() {
+    this.favoritesContainer = createElement('span', { class: 'header__favorites' }, [
+      `${appState.favorites.size}`,
+    ]);
+
+    favoritesSubject.subscribe(this.updateFavoritesCount);
+  }
+
+  updateFavoritesCount = () => {
+    this.favoritesContainer.textContent = `${appState.favorites.size}`;
+  };
+
   render = () => {
     const container = createElement('header', { class: 'header' });
 
@@ -22,9 +38,10 @@ class Header {
       </nav>
     `;
 
+    container.append(this.favoritesContainer);
+
     return container;
   };
 }
 
-const header = new Header();
-export default header;
+export default Header;

@@ -1,13 +1,15 @@
 import './tree.scss';
 
-import header from '../../header/header';
+import Header from '../../header/header';
 
 import createElement from '../../../utils/createElement';
 
 class Tree {
   render = () => {
     const container = createElement('div', { class: 'tree-page' });
-    container.append(header.render());
+    const header = new Header().render();
+
+    container.append(header);
 
     return container;
   };

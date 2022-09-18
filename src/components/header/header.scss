@@ -1,15 +1,31 @@
 .header {
+  gap: 1rem;
+  justify-content: space-between;
   max-width: 144rem;
   margin: 0 auto;
+
+  &,
+  &__nav-list {
+    flex-wrap: wrap;
+  }
 
   &,
   &__nav-link {
     padding: 1.5rem;
   }
 
-  &__nav-list {
+  &,
+  &__nav-list,
+  &__favorites {
     display: flex;
-    flex-wrap: wrap;
+  }
+
+  &,
+  &__favorites {
+    align-items: center;
+  }
+
+  &__nav-list {
     list-style: none;
   }
 
@@ -35,5 +51,19 @@
       text-shadow: 0 0 0.1rem #000;
       pointer-events: none;
     }
+  }
+
+  &__favorites {
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    padding-top: 1.2rem;
+
+    text-shadow: 0 0 0.1rem #000;
+
+    background-image: url("assets/svg/ball-transparent.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 }

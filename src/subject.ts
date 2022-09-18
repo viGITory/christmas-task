@@ -22,5 +22,6 @@ class Subject {
 
 const appStateSubject = new Subject();
 const resetFiltersSubject = new Subject();
+const favoritesSubject = new Subject();
 
-export { appStateSubject, resetFiltersSubject };
+export { appStateSubject, resetFiltersSubject, favoritesSubject };

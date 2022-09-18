@@ -1,5 +1,5 @@
 .toy-card {
-  padding: 1.5rem;
+  overflow: hidden;
 
   text-shadow: 0 0 0.1rem #000;
 
@@ -15,8 +15,35 @@
     background-color: rgba(255, 255, 255, 0.4);
   }
 
+  &--active &__favorite {
+    opacity: 1;
+  }
+
+  &--error &__inner {
+    transform: translateX(-100%);
+  }
+
+  &__inner,
+  &__props-item,
+  &__wrapper,
+  &__count-wrapper,
+  &__error {
+    display: flex;
+  }
+
+  &__inner {
+    transition: transform 0.2s;
+  }
+
+  &__content,
+  &__error {
+    min-width: 100%;
+    padding: 1.5rem;
+  }
+
   &__title,
-  &__count {
+  &__count,
+  &__error {
     font-family: Neucha, sans-serif;
     font-size: 2.2rem;
   }
@@ -26,9 +53,13 @@
     margin-bottom: 1.5rem;
   }
 
+  &__title,
+  &__error {
+    text-align: center;
+  }
+
   &__title {
     font-weight: 400;
-    text-align: center;
   }
 
   &__props {
@@ -36,21 +67,24 @@
   }
 
   &__props-item,
-  &__wrapper {
-    display: flex;
+  &__count-wrapper {
+    justify-content: space-between;
   }
 
   &__props-item {
-    justify-content: space-between;
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
     }
   }
 
-  &__wrapper {
-    align-items: flex-end;
+  &__wrapper,
+  &__error {
     justify-content: center;
+  }
+
+  &__wrapper {
+    gap: 1rem;
     padding-bottom: 1.5rem;
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -62,5 +96,28 @@
     height: auto;
 
     object-fit: contain;
+  }
+
+  &__count-wrapper,
+  &__error {
+    align-items: center;
+  }
+
+  &__count-wrapper {
+    flex-direction: column;
+  }
+
+  &__favorite {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+
+    background-image: url("assets/svg/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0;
+
+    transition: opacity 0.2s;
   }
 }

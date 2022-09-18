@@ -1,7 +1,7 @@
 import './toys.scss';
 
 import Snowfall from '../../snowfall/snowfall';
-import header from '../../header/header';
+import Header from '../../header/header';
 import MusicButton from '../../musicButton/musicButton';
 import SnowButton from '../../snowButton/snowButton';
 import Search from '../../search/search';
@@ -19,6 +19,7 @@ import filterByRange from '../../../utils/filterByRange';
 import { appStateSubject } from '../../../subject';
 
 import decorations from '../../../data/decorations';
+import appState from '../../../appState';
 
 class Toys {
   data;
@@ -38,7 +39,11 @@ class Toys {
       this.cardsContainer.removeChild(this.cardsContainer.firstChild);
 
     searchToy(sortData(filterByValue(filterByRange(this.data)))).forEach((item) => {
-      this.cardsContainer.append(new ToyCard(item).render());
+      const card = new ToyCard(item).render();
+      this.cardsContainer.append(card);
+
+      if (appState.favorites.has(card.getAttribute('data-num')))
+        card.classList.add('toy-card--active');
     });
 
     if (!this.cardsContainer.firstChild) {
@@ -53,6 +58,7 @@ class Toys {
   render = () => {
     const page = createElement('div', { class: 'toys-page' });
     const snowfall = new Snowfall();
+    const header = new Header().render();
     const leftContainer = createElement('section', { class: 'toys-page__left' });
     const rightContainer = createElement('section', { class: 'toys-page__right' });
     const topLeftWrapper = createElement('div', { class: 'toys-page__left-wrapper' });
@@ -76,7 +82,7 @@ class Toys {
     leftContainer.append(topLeftWrapper, valueFilters, sorting, rangeFilters, bottomLeftWrapper);
     rightContainer.append(sorting, this.cardsContainer);
     mainContainer.append(leftContainer, rightContainer);
-    page.append(snowfall.render(), header.render(), mainContainer);
+    page.append(snowfall.render(), header, mainContainer);
 
     return page;
   };
