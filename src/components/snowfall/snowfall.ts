@@ -1,12 +1,13 @@
 import './snowfall.scss';
 
 import createElement from '../../utils/createElement';
+import { IComponentProps } from '../../types';
 
 class Snowfall {
   container;
 
-  constructor() {
-    this.container = createElement('div', { class: 'snowfall' });
+  constructor({ className = '' }: IComponentProps) {
+    this.container = createElement('div', { class: `snowfall ${className}`.trim() });
   }
 
   render = () => {
@@ -19,7 +20,7 @@ class Snowfall {
   };
 
   toggleShow = () => {
-    this.container.classList.toggle('snowfall--show');
+    this.container.classList.toggle('snowfall--hide');
   };
 }
 

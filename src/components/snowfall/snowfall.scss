@@ -1,13 +1,13 @@
 .snowfall {
   position: fixed;
   inset: 0;
+  overflow: hidden;
 
   pointer-events: none;
-  opacity: 0;
   transition: opacity 0.2s;
 
-  &--show {
-    opacity: 1;
+  &--hide {
+    opacity: 0;
   }
 
   &__snowflake {

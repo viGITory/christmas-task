@@ -5,23 +5,23 @@ import { appStateSubject } from '../../subject';
 
 import appState from '../../appState';
 import sortOptions from '../../data/sortOptions';
+import { IComponentProps } from '../../types';
 
 class Sorting {
+  container;
+
   select;
 
-  constructor() {
+  constructor({ className = '' }: IComponentProps) {
+    this.container = createElement('div', { class: `${className} sorting`.trim() }, [
+      'Сортировать',
+    ]);
     this.select = createElement('select', { class: 'sorting__select' });
 
     this.addListeners();
   }
 
-  render = (className?: string) => {
-    const container = createElement(
-      'div',
-      { class: className ? `${className} sorting` : 'sorting' },
-      ['Сортировать']
-    );
-
+  render = () => {
     Object.values(sortOptions).forEach((value) => {
       const option = createElement('option', { class: 'sorting__option', value: `${value}` }, [
         value,
@@ -30,9 +30,9 @@ class Sorting {
       this.select.append(option);
     });
 
-    container.append(this.select);
+    this.container.append(this.select);
 
-    return container;
+    return this.container;
   };
 
   addListeners = () => {

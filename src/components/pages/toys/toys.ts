@@ -57,7 +57,7 @@ class Toys {
 
   render = () => {
     const page = createElement('div', { class: 'toys-page' });
-    const snowfall = new Snowfall();
+    const snowfall = new Snowfall({ className: 'snowfall--hide' });
     const header = new Header().render();
     const leftContainer = createElement('section', { class: 'toys-page__left' });
     const rightContainer = createElement('section', { class: 'toys-page__right' });
@@ -68,7 +68,7 @@ class Toys {
     const search = new Search().render();
     const valueFilters = new ValueFilters(this.data).render();
     const rangeFilters = new RangeFilters(this.data).render();
-    const sorting = new Sorting().render('toys-page__sorting');
+    const sorting = new Sorting({ className: 'toys-page__sorting' }).render();
     const mainContainer = createElement('main', { class: 'toys-page__main' });
 
     this.renderCards();

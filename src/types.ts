@@ -4,6 +4,10 @@ type TValueFilter = 'shape' | 'color' | 'size' | 'favorite';
 type TRangeType = 'count' | 'year';
 type TObserver = () => void;
 
+interface IComponentProps {
+  className?: string;
+}
+
 interface IToyCard {
   num: string;
   name: string;
@@ -30,4 +34,4 @@ interface IRangeGroup {
   maxValueContainer: HTMLElement;
 }
 
-export { IToyCard, IRangeProps, IRangeGroup, TValueFilter, TObserver };
+export { IComponentProps, IToyCard, IRangeProps, IRangeGroup, TValueFilter, TObserver };
