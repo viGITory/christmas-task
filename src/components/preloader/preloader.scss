@@ -1,0 +1,119 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #2a668b;
+  transition: opacity 0.2s;
+
+  &--hide {
+    opacity: 0;
+  }
+
+  &__inner {
+    position: relative;
+    width: 16rem;
+    height: 16rem;
+  }
+
+  &__inner div {
+    position: absolute;
+    width: 1.2rem;
+    height: 1.2rem;
+
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0.1rem #000;
+
+    animation: preloader 1.2s linear infinite;
+  }
+
+  &__inner div:nth-child(1) {
+    top: 0;
+    left: 7.4rem;
+    animation-delay: 0s;
+  }
+
+  &__inner div:nth-child(2) {
+    top: 1rem;
+    right: 3.7rem;
+    animation-delay: 0.1s;
+  }
+
+  &__inner div:nth-child(3) {
+    top: 3.7rem;
+    right: 1rem;
+    animation-delay: 0.2s;
+  }
+
+  &__inner div:nth-child(4) {
+    top: 7.4rem;
+    right: 0;
+    animation-delay: 0.3s;
+  }
+
+  &__inner div:nth-child(5) {
+    right: 1rem;
+    bottom: 3.7rem;
+    animation-delay: 0.4s;
+  }
+
+  &__inner div:nth-child(6) {
+    right: 3.7rem;
+    bottom: 1rem;
+    animation-delay: 0.5s;
+  }
+
+  &__inner div:nth-child(7) {
+    bottom: 0;
+    left: 7.4rem;
+    animation-delay: 0.6s;
+  }
+
+  &__inner div:nth-child(8) {
+    bottom: 1rem;
+    left: 3.7rem;
+    animation-delay: 0.7s;
+  }
+
+  &__inner div:nth-child(9) {
+    bottom: 3.7rem;
+    left: 1rem;
+    animation-delay: 0.8s;
+  }
+
+  &__inner div:nth-child(10) {
+    top: 7.4rem;
+    left: 0;
+    animation-delay: 0.9s;
+  }
+
+  &__inner div:nth-child(11) {
+    top: 3.7rem;
+    left: 1rem;
+    animation-delay: 1s;
+  }
+
+  &__inner div:nth-child(12) {
+    top: 1rem;
+    left: 3.7rem;
+    animation-delay: 1.1s;
+  }
+}
+
+@keyframes preloader {
+
+  0%,
+  25%,
+  75%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+}
