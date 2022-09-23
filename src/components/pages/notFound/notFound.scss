@@ -1,0 +1,162 @@
+.not-found-page {
+  height: 100vh;
+
+  background-image: url("assets/bg.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
+
+  &,
+  &__link-arrow {
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__inner,
+  &__top,
+  &__link,
+  &__link-inner {
+    display: flex;
+  }
+
+  &__inner,
+  &__top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__inner {
+    justify-content: flex-end;
+    min-height: 100vh;
+
+    backdrop-filter: blur(0.5rem);
+  }
+
+  &__top {
+    gap: 4rem;
+    max-width: 100%;
+  }
+
+  &__top,
+  &__bottom {
+    padding: 1.5rem;
+  }
+
+  &__title,
+  &__num {
+    font-family: Neucha, sans-serif;
+    text-shadow: 0 0 0.2rem #000;
+  }
+
+  &__title {
+    font-size: 8rem;
+    text-align: center;
+  }
+
+  &__link {
+    align-items: center;
+    width: max-content;
+    height: 4rem;
+    overflow: hidden;
+
+    color: inherit;
+    text-decoration: none;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.1rem #000;
+
+    transition: background-color 0.2s;
+    backdrop-filter: blur(1rem);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  &__link:hover &__link-inner {
+    transform: translateX(-100%);
+  }
+
+  &__link:hover &__link-text {
+    opacity: 0;
+  }
+
+  &__link:hover &__link-arrow {
+    opacity: 1;
+  }
+
+  &__link-inner {
+    transition: transform 0.2s;
+  }
+
+  &__link-text,
+  &__link-arrow {
+    min-width: 100%;
+    transition: opacity 0.6s;
+  }
+
+  &__link-text {
+    padding: 1.2rem 1.5rem 1rem;
+  }
+
+  &__link-arrow {
+    min-height: 100%;
+
+    background-image: url("assets/svg/arrow-left.svg");
+    background-size: 2rem;
+    opacity: 0;
+  }
+
+  &__bottom,
+  &__ground {
+    bottom: 0;
+    width: 100%;
+  }
+
+  &__bottom {
+    position: relative;
+    height: 50rem;
+    overflow: hidden;
+  }
+
+  &__ground,
+  &__num,
+  &__snowdrift {
+    position: absolute;
+  }
+
+  &__ground {
+    left: 0;
+    height: 25rem;
+
+    background-color: #f6f9fa;
+    box-shadow: 0 0 10px 10px #f6f9fa;
+  }
+
+  &__num,
+  &__snowdrift {
+    left: 50%;
+  }
+
+  &__num {
+    bottom: -2rem;
+
+    font-size: 30rem;
+    color: #2a668b;
+
+    transform: rotate(6deg) translateX(-50%);
+  }
+
+  &__snowdrift {
+    bottom: -5rem;
+    display: block;
+    width: 60rem;
+    height: 20rem;
+
+    background-color: #e8f2f6;
+    background-image: linear-gradient(to bottom, #dee8f1, #f6f9fa 60px);
+    border-radius: 50%;
+
+    transform: translateX(-50%);
+  }
+}
