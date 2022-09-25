@@ -34,6 +34,7 @@
   }
 
   &__nav-link {
+    position: relative;
     display: block;
 
     color: rgba(255, 255, 255, 0.2);
@@ -41,6 +42,21 @@
     text-transform: uppercase;
 
     transition: color 0.2s, text-shadow 0.2s;
+
+    &::after {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      width: calc(100% - 3rem);
+      height: 0.1rem;
+
+      content: "";
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 0.1rem;
+      opacity: 0;
+
+      transform: translateX(-50%);
+    }
 
     &:hover {
       color: rgba(255, 255, 255, 0.6);
@@ -50,6 +66,10 @@
       color: #fff;
       text-shadow: 0 0 0.1rem #000;
       pointer-events: none;
+
+      &::after {
+        opacity: 1;
+      }
     }
   }
 

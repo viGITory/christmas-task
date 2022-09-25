@@ -1,4 +1,4 @@
-import { TObserver } from './types';
+import { TObserverData, TObserver } from './types';
 
 class Subject {
   observers: TObserver[];
@@ -15,13 +15,14 @@ class Subject {
     this.observers = this.observers.filter((fn) => fn !== observer);
   }
 
-  notify() {
-    this.observers.forEach((observer) => observer());
+  notify(data?: TObserverData) {
+    this.observers.forEach((observer) => observer(data));
   }
 }
 
 const appStateSubject = new Subject();
 const resetFiltersSubject = new Subject();
 const favoritesSubject = new Subject();
+const pageRouteSubject = new Subject();
 
-export { appStateSubject, resetFiltersSubject, favoritesSubject };
+export { appStateSubject, resetFiltersSubject, favoritesSubject, pageRouteSubject };

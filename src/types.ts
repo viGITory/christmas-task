@@ -2,7 +2,8 @@ import * as noUiSlider from 'nouislider';
 
 type TValueFilter = 'shape' | 'color' | 'size' | 'favorite';
 type TRangeType = 'count' | 'year';
-type TObserver = () => void;
+type TObserverData = string;
+type TObserver = (data?: TObserverData) => void;
 
 interface IComponentProps {
   className?: string;
@@ -34,4 +35,12 @@ interface IRangeGroup {
   maxValueContainer: HTMLElement;
 }
 
-export { IComponentProps, IToyCard, IRangeProps, IRangeGroup, TValueFilter, TObserver };
+export {
+  IComponentProps,
+  IToyCard,
+  IRangeProps,
+  IRangeGroup,
+  TValueFilter,
+  TObserverData,
+  TObserver,
+};

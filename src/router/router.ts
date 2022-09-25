@@ -1,4 +1,5 @@
 import notFoundPage from '../components/pages/notFound/notFound';
+import { pageRouteSubject } from '../subject';
 
 import routes from './routes';
 
@@ -11,6 +12,8 @@ const router = () => {
     root.innerHTML = '';
     root.append(page);
   }
+
+  pageRouteSubject.notify(path);
 };
 
 export default router;
