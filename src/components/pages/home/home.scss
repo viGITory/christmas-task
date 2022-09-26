@@ -1,5 +1,4 @@
 .home-page {
-  display: flex;
   flex-direction: column;
   gap: 4rem;
   align-items: center;
@@ -7,6 +6,11 @@
   min-width: 76.8rem;
   min-height: 100%;
   padding: 2rem;
+
+  &,
+  &__link-inner {
+    display: flex;
+  }
 
   &__title {
     max-width: 75rem;
@@ -32,50 +36,23 @@
   }
 
   &__link,
-  &__link-item {
+  &__link-text {
     display: block;
-  }
-
-  &__link::before,
-  &__link-item {
-    border-radius: 0.5rem;
-    backdrop-filter: blur(1rem);
   }
 
   &__link {
     position: relative;
+    overflow: hidden;
 
     font-size: 2.4rem;
     color: #fff;
     text-decoration: none;
 
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
     outline: none;
-
-    &::before {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-
-      content: "";
-      background-color: rgba(255, 255, 255, 0.5);
-
-      transition: width 0.5s, height 0.5s, opacity 0.5s;
-      transform: translate(-50%, -50%);
-    }
-
-    &:hover,
-    &:focus {
-
-      &::before {
-        width: 120%;
-        height: 150%;
-
-        border-radius: 1rem;
-        opacity: 0;
-      }
-    }
+    box-shadow: 0 0 0.1rem #000;
+    backdrop-filter: blur(1rem);
   }
 
   &__link:hover ~ &__overlay,
@@ -83,11 +60,47 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
 
-  &__link-item {
-    padding: 1.2rem 4rem 1rem;
+  &__link:hover &__link-inner {
+    transform: translateX(0);
+  }
 
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 0.1rem #000;
+  &__link:hover &__link-text {
+    opacity: 0;
+  }
+
+  &__link:hover &__link-arrow {
+    opacity: 1;
+  }
+
+  &__link-inner {
+    transition: transform 0.2s;
+    transform: translateX(-100%);
+  }
+
+  &__link-text,
+  &__link-arrow {
+    min-width: 100%;
+    transition: opacity 0.6s;
+  }
+
+  &__link-text {
+    padding: 1.2rem 4rem 1rem;
+  }
+
+  &__link-arrow,
+  &__overlay {
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__link-arrow {
+    min-height: 100%;
+
+    background-image: url("assets/svg/arrow-left.svg");
+    background-size: 2rem;
+    opacity: 0;
+
+    transform: rotate(180deg);
   }
 
   &__overlay {
@@ -97,8 +110,6 @@
 
     background-color: rgba(0, 0, 0, 0.1);
     background-image: url("assets/bg.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
     background-size: cover;
     background-blend-mode: multiply;
 

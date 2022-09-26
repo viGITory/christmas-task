@@ -14,7 +14,10 @@ class Home {
         <span class="home-page__title-light">ё</span>лку»
       </h1>
       <a class="home-page__link" href="#/toys">
-        <span class="home-page__link-item">Начать</span>
+        <div class="home-page__link-inner">
+          <span class="home-page__link-arrow"></span>
+          <span class="home-page__link-text">Начать</span>
+        </div>
       </a>
       <div class="home-page__overlay"></div>
     `;
