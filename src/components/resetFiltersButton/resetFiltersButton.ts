@@ -6,9 +6,7 @@ import createElement from '../../utils/createElement';
 
 class ResetFiltersButton {
   render = () => {
-    const container = createElement('button', { class: 'reset-filters-button', type: 'button' }, [
-      'Сбросить фильтры',
-    ]);
+    const container = createElement('button', { class: 'reset-filters-button', type: 'button' });
 
     container.addEventListener('click', () => {
       appState.filters.shape.clear();

@@ -1,26 +1,19 @@
 .reset-filters-button {
-  width: max-content;
-  height: 4rem;
-  padding: 1.2rem 1.5rem 1rem;
-
-  font-family: inherit;
-  font-size: 1.4rem;
-  font-weight: inherit;
-  color: #fff;
-  text-decoration: none;
-  text-shadow: 0 0 0.1rem #000;
+  width: 3rem;
+  height: 3rem;
 
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  background-image: url("assets/svg/filter.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   border: 0;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 0.1rem #000;
-  backdrop-filter: blur(1rem);
+  opacity: 0.2;
 
-  transition: text-shadow 0.2s, background-color 0.2s;
+  transition: opacity 0.2s;
 
   &:hover {
-    text-shadow: none;
-    background-color: rgba(255, 255, 255, 0.6);
+    opacity: 0.6;
   }
 }

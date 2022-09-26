@@ -62,7 +62,9 @@ class Toys {
     const leftContainer = createElement('section', { class: 'toys-page__left' });
     const rightContainer = createElement('section', { class: 'toys-page__right' });
     const topLeftWrapper = createElement('div', { class: 'toys-page__left-wrapper' });
-    const bottomLeftWrapper = createElement('div', { class: 'toys-page__left-wrapper' });
+    const bottomLeftWrapper = createElement('div', { class: 'toys-page__reset-buttons' }, [
+      'Сбросить',
+    ]);
     const musicButton = new MusicButton().render();
     const snowButton = new SnowButton().render();
     const search = new Search().render();

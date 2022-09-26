@@ -10,7 +10,8 @@
   background-blend-mode: multiply;
 
   &__main,
-  &__left-wrapper {
+  &__left-wrapper,
+  &__reset-buttons {
     display: flex;
   }
 
@@ -38,12 +39,28 @@
   }
 
   &__left-wrapper,
+  &__reset-buttons,
   &__right {
     gap: 1rem;
   }
 
   &__left-wrapper {
     align-items: center;
+  }
+
+  &__reset-buttons,
+  &__error {
+    font-family: Neucha, sans-serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-shadow: 0 0 0.1rem #000;
+  }
+
+  &__reset-buttons {
+    justify-content: center;
+    padding-top: 1.5rem;
+
+    border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
   }
 
   &__right {
@@ -65,10 +82,6 @@
   &__error {
     grid-column: 1 / -1;
 
-    font-family: Neucha, sans-serif;
-    font-size: 2.4rem;
-    font-weight: 400;
     text-align: center;
-    text-shadow: 0 0 0.1rem #000;
   }
 }
