@@ -1,5 +1,9 @@
 .range-filters {
-  text-shadow: 0 0 0.1rem #000;
+
+  &__title,
+  &__subtitle {
+    text-shadow: 0 0 0.1rem #000;
+  }
 
   &__title {
     margin-bottom: 3rem;
@@ -22,6 +26,8 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
+    color: rgba(255, 255, 255, 0.2);
   }
 
   &__subtitle,
@@ -67,18 +73,10 @@
     }
   }
 
-  &__value,
-  &__separator {
-    color: rgba(255, 255, 255, 0.2);
-    text-shadow: none;
-  }
-
   &__value {
-    min-width: 4.5rem;
-    text-align: center;
-  }
+    min-width: 5rem;
 
-  &__separator {
-    padding: 0 0.5rem;
+    text-align: center;
+    text-shadow: none;
   }
 }

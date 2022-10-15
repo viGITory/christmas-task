@@ -9,10 +9,14 @@
     text-shadow: 0 0 0.1rem #000;
   }
 
-  &__group {
+  &__group,
+  &__label--favorite {
     display: flex;
     gap: 1rem;
     align-items: center;
+  }
+
+  &__group {
     min-height: 4rem;
 
     text-shadow: 0 0 0.1rem #000;
@@ -22,13 +26,14 @@
     }
   }
 
-  &__button {
-    cursor: pointer;
-    appearance: none;
+  &__label--shape,
+  &__label--shape &__button {
+    width: 4rem;
+    height: 4rem;
   }
 
-  &__group--shape > &__button,
-  &__group--size > &__button {
+  &__label--shape &__button,
+  &__label--size &__button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -45,33 +50,39 @@
     }
   }
 
-  &__group--shape > &__button {
-    width: 4rem;
-    height: 4rem;
+  &__label--color {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
-  &__group--shape > &__button:nth-child(1) {
-    background-image: url("assets/svg/ball.svg");
+  &__label--color &__button {
+
+    &::before {
+      position: absolute;
+      top: -1rem;
+      left: 50%;
+      width: 0.5rem;
+      height: 0.5rem;
+
+      content: "";
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      opacity: 0;
+
+      transition: opacity 0.2s;
+      transform: translateX(-50%);
+    }
+
+    &:hover {
+
+      &::before {
+        opacity: 1;
+      }
+    }
   }
 
-  &__group--shape > &__button:nth-child(2) {
-    background-image: url("assets/svg/toy.svg");
-  }
-
-  &__group--shape > &__button:nth-child(3) {
-    background-image: url("assets/svg/bell.svg");
-  }
-
-  &__group--shape > &__button:nth-child(4) {
-    background-image: url("assets/svg/cone.svg");
-  }
-
-  &__group--shape > &__button:nth-child(5) {
-    background-image: url("assets/svg/snowflake.svg");
-  }
-
-  &__group--color > &__button,
-  &__group--favorite > &__button {
+  &__label--color &__button,
+  &__label--favorite &__button {
     position: relative;
     width: 2.5rem;
     height: 2.5rem;
@@ -100,79 +111,85 @@
     }
   }
 
-  &__group--color > &__button:nth-child(1),
-  &__group--color > &__button:nth-child(4) {
+  &__label--shape:nth-child(1) &__button {
+    background-image: url("assets/svg/ball.svg");
+  }
+
+  &__label--shape:nth-child(2) &__button {
+    background-image: url("assets/svg/toy.svg");
+  }
+
+  &__label--shape:nth-child(3) &__button {
+    background-image: url("assets/svg/bell.svg");
+  }
+
+  &__label--shape:nth-child(4) &__button {
+    background-image: url("assets/svg/cone.svg");
+  }
+
+  &__label--shape:nth-child(5) &__button {
+    background-image: url("assets/svg/snowflake.svg");
+  }
+
+  &__label--color:nth-child(1) &__button,
+  &__label--color:nth-child(4) &__button {
 
     &::after {
       color: #2a668b;
     }
   }
 
-  &__group--color > &__button:nth-child(1) {
+  &__label--color:nth-child(1) &__button {
     background-color: #fdd700;
   }
 
-  &__group--color > &__button:nth-child(2) {
+  &__label--color:nth-child(2) &__button {
     background-color: #08aa05;
   }
 
-  &__group--color > &__button:nth-child(3) {
+  &__label--color:nth-child(3) &__button {
     background-color: #fd0000;
   }
 
-  &__group--color > &__button:nth-child(4) {
+  &__label--color:nth-child(4) &__button {
     background-color: #fff;
   }
 
-  &__group--color > &__button:nth-child(5) {
+  &__label--color:nth-child(5) &__button {
     background-color: #2199eb;
   }
 
-  &__group--color > &__button {
-
-    &::before {
-      position: absolute;
-      top: -1rem;
-      left: 50%;
-      width: 0.5rem;
-      height: 0.5rem;
-
-      content: "";
-      background-color: rgba(255, 255, 255, 0.6);
-      border-radius: 50%;
-      opacity: 0;
-
-      transition: opacity 0.2s;
-      transform: translateX(-50%);
-    }
-
-    &:hover {
-
-      &::before {
-        opacity: 1;
-      }
-    }
-  }
-
-  &__group--size > &__button:nth-child(1) {
+  &__label--size:nth-child(1),
+  &__label--size:nth-child(1) &__button {
     width: 4rem;
     height: 4rem;
-    background-image: url("assets/svg/ball.svg");
   }
 
-  &__group--size > &__button:nth-child(2) {
+  &__label--size:nth-child(2),
+  &__label--size:nth-child(2) &__button {
     width: 3.5rem;
     height: 3.5rem;
-    background-image: url("assets/svg/ball.svg");
   }
 
-  &__group--size > &__button:nth-child(3) {
+  &__label--size:nth-child(3),
+  &__label--size:nth-child(3) &__button {
     width: 3rem;
     height: 3rem;
+  }
+
+  &__label--size:nth-child(1) &__button {
     background-image: url("assets/svg/ball.svg");
   }
 
-  &__group--favorite > &__button {
+  &__label--size:nth-child(2) &__button {
+    background-image: url("assets/svg/ball.svg");
+  }
+
+  &__label--size:nth-child(3) &__button {
+    background-image: url("assets/svg/ball.svg");
+  }
+
+  &__label--favorite &__button {
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(1rem);
     transition: background-color 0.2s;
@@ -180,5 +197,10 @@
     &:hover {
       background-color: rgba(255, 255, 255, 0.6);
     }
+  }
+
+  &__button {
+    cursor: pointer;
+    appearance: none;
   }
 }

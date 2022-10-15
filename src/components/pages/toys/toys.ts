@@ -29,7 +29,7 @@ class Toys {
   constructor() {
     this.data = decorations;
 
-    this.cardsContainer = createElement('section', { class: 'toys-page__cards' });
+    this.cardsContainer = createElement('div', { class: 'toys-page__cards' });
 
     appStateSubject.subscribe(this.renderCards);
   }
@@ -59,11 +59,18 @@ class Toys {
     const page = createElement('div', { class: 'toys-page' });
     const snowfall = new Snowfall({ className: 'snowfall--hide' });
     const header = new Header().render();
-    const leftContainer = createElement('section', { class: 'toys-page__left' });
-    const rightContainer = createElement('section', { class: 'toys-page__right' });
+    const mainContainer = createElement('main', { class: 'toys-page__main' }, [
+      createElement('h1', { class: 'visually-hidden' }, ['Ёлочные игрушки']),
+    ]);
+    const leftContainer = createElement('section', { class: 'toys-page__left' }, [
+      createElement('h2', { class: 'visually-hidden' }, ['Фильтры']),
+    ]);
+    const rightContainer = createElement('section', { class: 'toys-page__right' }, [
+      createElement('h2', { class: 'visually-hidden' }, ['Карточки игрушек и сортировка']),
+    ]);
     const topLeftWrapper = createElement('div', { class: 'toys-page__left-wrapper' });
     const bottomLeftWrapper = createElement('div', { class: 'toys-page__reset-buttons' }, [
-      'Сбросить',
+      'Сбросить ',
     ]);
     const musicButton = new MusicButton().render();
     const snowButton = new SnowButton().render();
@@ -71,7 +78,6 @@ class Toys {
     const valueFilters = new ValueFilters(this.data).render();
     const rangeFilters = new RangeFilters(this.data).render();
     const sorting = new Sorting({ className: 'toys-page__sorting' }).render();
-    const mainContainer = createElement('main', { class: 'toys-page__main' });
 
     this.renderCards();
 

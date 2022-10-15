@@ -13,8 +13,8 @@ class Sorting {
   select;
 
   constructor({ className = '' }: IComponentProps) {
-    this.container = createElement('div', { class: `${className} sorting`.trim() }, [
-      'Сортировать',
+    this.container = createElement('label', { class: `${className} sorting`.trim() }, [
+      'Сортировать ',
     ]);
     this.select = createElement('select', { class: 'sorting__select' });
 

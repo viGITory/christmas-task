@@ -7,13 +7,11 @@ import appState from '../../appState';
 class Header {
   navLinks: HTMLAnchorElement[];
 
-  favoritesContainer;
+  favoritesCount;
 
   constructor() {
     this.navLinks = [];
-    this.favoritesContainer = createElement('span', { class: 'header__favorites' }, [
-      `${appState.favorites.size}`,
-    ]);
+    this.favoritesCount = createElement('span', {}, [`${appState.favorites.size}`]);
 
     favoritesSubject.subscribe(this.updateFavoritesCount);
     pageRouteSubject.subscribe(this.changeActiveLink);
@@ -28,13 +26,17 @@ class Header {
   };
 
   updateFavoritesCount = () => {
-    this.favoritesContainer.textContent = `${appState.favorites.size}`;
+    this.favoritesCount.textContent = `${appState.favorites.size}`;
   };
 
   render = () => {
     const container = createElement('header', { class: 'header' });
     const nav = createElement('nav', { class: 'header__nav' });
     const navList = createElement('ul', { class: 'header__nav-list' });
+    const favoritesContainer = createElement('div', { class: 'header__favorites' }, [
+      createElement('span', { class: 'visually-hidden' }, ['Игрушек в избранном: ']),
+      this.favoritesCount,
+    ]);
 
     const linkNames = {
       '/': 'На главную',
@@ -55,7 +57,7 @@ class Header {
     });
 
     nav.append(navList);
-    container.append(nav, this.favoritesContainer);
+    container.append(nav, favoritesContainer);
 
     return container;
   };

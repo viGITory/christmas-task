@@ -46,13 +46,13 @@ class RangeFilters {
   };
 
   createFilterGroup = ({ type, step, minValue, maxValue, title }: IRangeProps) => {
-    const container = createElement('div', { class: 'range-filters__item' });
-    const groupTitle = createElement('p', { class: 'range-filters__subtitle' }, [`${title}`]);
+    const container = createElement('div', { class: 'range-filters__item' }, [
+      createElement('p', { class: 'range-filters__subtitle' }, [`${title}`]),
+    ]);
     const sliderWrapper = createElement('div', { class: 'range-filters__wrapper' });
     const slider: noUiSlider.target = createElement('div', {
       class: 'range-filters__slider',
     });
-    const valuesSeparator = createElement('span', { class: 'range-filters__separator' }, ['—']);
     const minValueContainer = createElement('output', { class: 'range-filters__value' }, [
       `${minValue}`,
     ]);
@@ -99,8 +99,8 @@ class RangeFilters {
     appState.range[type].min = minValue;
     appState.range[type].max = maxValue;
 
-    sliderWrapper.append(slider, minValueContainer, valuesSeparator, maxValueContainer);
-    container.append(groupTitle, sliderWrapper);
+    sliderWrapper.append(slider, minValueContainer, ' — ', maxValueContainer);
+    container.append(sliderWrapper);
 
     return container;
   };
@@ -111,8 +111,9 @@ class RangeFilters {
     const minYear = Math.min(...this.data.map((item) => +item.year));
     const maxYear = Math.max(...this.data.map((item) => +item.year));
 
-    const container = createElement('div', { class: 'range-filters' });
-    const title = createElement('h3', { class: 'range-filters__title' }, ['Фильтры по диапазону']);
+    const container = createElement('div', { class: 'range-filters' }, [
+      createElement('h3', { class: 'range-filters__title' }, ['Фильтры по диапазону']),
+    ]);
     const countFilter = this.createFilterGroup({
       type: 'count',
       step: 1,
@@ -128,7 +129,7 @@ class RangeFilters {
       title: 'Год приобретения:',
     });
 
-    container.append(title, countFilter, yearFilter);
+    container.append(countFilter, yearFilter);
 
     return container;
   };

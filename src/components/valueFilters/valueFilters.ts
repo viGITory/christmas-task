@@ -28,22 +28,26 @@ class ValueFilters {
   };
 
   createFilterGroup = (description: string, filterType: TValueFilter) => {
-    const container = createElement(
-      'div',
-      { class: `value-filters__group value-filters__group--${filterType}` },
-      [description]
-    );
+    const container = createElement('div', { class: 'value-filters__group' });
     const isFavoriteFilter = filterType === 'favorite';
+
+    if (!isFavoriteFilter) container.textContent = `${description} `;
+
     const filterValues = [
       ...new Set(this.data.map((item) => !isFavoriteFilter && item[filterType])),
     ];
 
     filterValues.forEach((value) => {
+      const label = createElement('label', {
+        class: `value-filters__label value-filters__label--${filterType}`,
+      });
+      const text = createElement('span', {}, [`${!isFavoriteFilter ? value : 'Только любимые: '}`]);
       const checkbox = createElement('input', {
         class: 'value-filters__button',
         type: 'checkbox',
-        'aria-label': `${isFavoriteFilter ? 'Любимые игрушки' : `${description} ${value}`}`,
       });
+
+      if (!isFavoriteFilter) text.classList.add('visually-hidden');
 
       checkbox.addEventListener('input', () => {
         if (checkbox instanceof HTMLInputElement) {
@@ -59,18 +63,17 @@ class ValueFilters {
 
       this.filters.push(checkbox);
 
-      container.append(checkbox);
+      label.append(text, checkbox);
+      container.append(label);
     });
 
     return container;
   };
 
   render = () => {
-    const container = createElement('div', { class: 'value-filters' });
-
-    container.innerHTML = `
-      <h3 class="value-filters__title">Фильтры по значению</h3>
-    `;
+    const container = createElement('div', { class: 'value-filters' }, [
+      createElement('h3', { class: 'value-filters__title' }, ['Фильтры по значению']),
+    ]);
 
     container.append(
       this.createFilterGroup('Форма:', 'shape'),

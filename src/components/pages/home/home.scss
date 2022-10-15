@@ -1,15 +1,23 @@
 .home-page {
-  flex-direction: column;
-  gap: 4rem;
-  align-items: center;
-  justify-content: center;
   min-width: 76.8rem;
   min-height: 100%;
   padding: 2rem;
 
   &,
+  &__main,
   &__link-inner {
     display: flex;
+  }
+
+  &,
+  &__main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__main {
+    gap: 4rem;
   }
 
   &__title {

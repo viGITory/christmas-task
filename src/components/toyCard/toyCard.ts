@@ -22,7 +22,7 @@ class ToyCard {
     container.innerHTML = `
       <div class="toy-card__inner">
         <div class="toy-card__content">
-          <h4 class="toy-card__title">${this.data.name}</h4>
+          <h3 class="toy-card__title">${this.data.name}</h3>
           <div class="toy-card__wrapper">
             <img class="toy-card__image" src="/assets/toys/${this.data.num}.png" alt="${
       this.data.name

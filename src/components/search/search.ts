@@ -13,6 +13,7 @@ class Search {
       placeholder: 'Поиск',
       autocomplete: 'off',
       autofocus: '',
+      'aria-label': 'Поиск игрушек',
     });
 
     container.addEventListener('input', () => {

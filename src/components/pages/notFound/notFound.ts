@@ -10,9 +10,9 @@ class NotFound {
     const snowfall = new Snowfall({}).render();
 
     container.innerHTML = `
-      <div class="not-found-page__inner">
+      <main class="not-found-page__inner">
         <div class="not-found-page__top">
-          <h2 class="not-found-page__title">Страница не существует</h2>
+          <h1 class="not-found-page__title">Страница не существует</h1>
           <a class="not-found-page__link" href="#/">
             <div class="not-found-page__link-inner">
               <span class="not-found-page__link-text">На главную</span>
@@ -22,10 +22,10 @@ class NotFound {
         </div>
         <div class="not-found-page__bottom">
           <div class="not-found-page__ground"></div>
-          <h2 class="not-found-page__num">404</h2>
+          <p class="not-found-page__num">404</p>
           <div class="not-found-page__snowdrift"></div>
         <div>
-      </div>
+      </main>
     `;
 
     container.append(snowfall);
