@@ -1,14 +1,6 @@
 .toys-page {
   min-height: 100%;
 
-  background-color: rgba(0, 0, 0, 0.1);
-  background-image: url("assets/bg2.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-blend-mode: multiply;
-
   &__main,
   &__left-wrapper,
   &__reset-buttons {
@@ -28,11 +20,12 @@
   }
 
   &__left {
-    max-width: 31rem;
+    max-width: 31.5rem;
     margin-top: 5rem;
   }
 
   &__left,
+  &__right,
   &__cards {
     display: grid;
     height: max-content;
@@ -48,15 +41,8 @@
     align-items: center;
   }
 
-  &__reset-buttons,
-  &__error {
-    font-family: Neucha, sans-serif;
-    font-size: 2.4rem;
-    font-weight: 400;
-    text-shadow: 0 0 0.1rem #000;
-  }
-
   &__reset-buttons {
+    align-items: center;
     justify-content: center;
     padding-top: 1.5rem;
 
@@ -64,9 +50,7 @@
   }
 
   &__right {
-    display: grid;
     flex-grow: 1;
-    height: max-content;
   }
 
   &__sorting {
@@ -74,7 +58,6 @@
   }
 
   &__cards {
-    flex-grow: 1;
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
     gap: 1rem;
   }
@@ -82,6 +65,10 @@
   &__error {
     grid-column: 1 / -1;
 
+    font-family: Neucha, sans-serif;
+    font-size: 2.4rem;
+    font-weight: 400;
     text-align: center;
+    text-shadow: 0 0 0.1rem #000;
   }
 }

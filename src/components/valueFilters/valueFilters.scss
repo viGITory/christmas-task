@@ -19,8 +19,6 @@
   &__group {
     min-height: 4rem;
 
-    text-shadow: 0 0 0.1rem #000;
-
     &:not(:last-child) {
       margin-bottom: 1.5rem;
     }
@@ -87,7 +85,6 @@
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 0.3rem;
-    box-shadow: 0 0 0.1rem #000;
 
     &::after {
       position: absolute;

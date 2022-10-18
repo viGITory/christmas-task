@@ -1,16 +1,14 @@
 .toy-card {
   overflow: hidden;
 
-  text-shadow: 0 0 0.1rem #000;
-
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0.5rem;
-  box-shadow: 0 0 0.1rem #000;
 
   transition: background-color 0.2s;
   backdrop-filter: blur(1rem);
 
+  &:hover,
   &--active {
     background-color: rgba(255, 255, 255, 0.4);
   }
@@ -58,6 +56,11 @@
     text-align: center;
   }
 
+  &__title,
+  &__count {
+    text-shadow: 0 0 0.1rem #000;
+  }
+
   &__title {
     font-weight: 400;
   }
@@ -87,13 +90,13 @@
     gap: 1rem;
     padding-bottom: 1.5rem;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
   }
 
   &__image {
     display: block;
     width: 10rem;
-    height: auto;
+    height: 10rem;
 
     object-fit: contain;
   }

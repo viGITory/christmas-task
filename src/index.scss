@@ -29,8 +29,12 @@ html {
 }
 
 body {
+  min-width: 76.8rem;
+
   font-family: Steppe, sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   color: #fff;
+
+  background-color: #2a668b;
 }

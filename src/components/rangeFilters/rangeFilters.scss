@@ -1,16 +1,12 @@
 .range-filters {
 
-  &__title,
-  &__subtitle {
-    text-shadow: 0 0 0.1rem #000;
-  }
-
   &__title {
     margin-bottom: 3rem;
 
     font-family: Neucha, sans-serif;
     font-size: 2.4rem;
     font-weight: 400;
+    text-shadow: 0 0 0.1rem #000;
   }
 
   &__item {
@@ -48,7 +44,7 @@
 
     &,
     .noUi-handle {
-      box-shadow: 0 0 0.1rem #000;
+      box-shadow: none;
     }
 
     .noUi-connect {

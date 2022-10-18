@@ -7,7 +7,6 @@
   font-family: inherit;
   font-size: 1.4rem;
   color: #fff;
-  text-shadow: 0 0 0.1rem #000;
 
   background-color: rgba(255, 255, 255, 0.2);
   background-image: url("assets/svg/search.svg");
@@ -17,7 +16,6 @@
   border: 0;
   border-radius: 0.5rem;
   outline: none;
-  box-shadow: 0 0 0.1rem #000;
   backdrop-filter: blur(1rem);
 
   &::placeholder {
