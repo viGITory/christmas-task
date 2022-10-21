@@ -4,6 +4,9 @@ import Snowfall from '../../snowfall/snowfall';
 import Header from '../../header/header';
 import MusicButton from '../../musicButton/musicButton';
 import SnowButton from '../../snowButton/snowButton';
+import treeImages from './components/treeImages/treeImages';
+import treeBackgrounds from './components/treeBackgrounds/treeBackgrounds';
+import MainTree from './components/mainTree/mainTree';
 
 import createElement from '../../../utils/createElement';
 
@@ -22,9 +25,11 @@ class Tree {
         new MusicButton().render(),
         new SnowButton().render(),
       ]),
+      treeImages.render(),
+      treeBackgrounds.render(),
     ]);
 
-    mainContainer.append(leftContainer);
+    mainContainer.append(leftContainer, new MainTree({ className: 'tree-page__center' }).render());
     container.append(mainContainer);
 
     return container;

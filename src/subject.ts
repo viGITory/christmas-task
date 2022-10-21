@@ -26,6 +26,8 @@ const snowfallSubject = new Subject();
 const resetFiltersSubject = new Subject();
 const favoritesSubject = new Subject();
 const pageRouteSubject = new Subject();
+const treeImageSubject = new Subject();
+const treeBackgroundSubject = new Subject();
 
 export {
   appStateSubject,
@@ -34,4 +36,6 @@ export {
   resetFiltersSubject,
   favoritesSubject,
   pageRouteSubject,
+  treeImageSubject,
+  treeBackgroundSubject,
 };

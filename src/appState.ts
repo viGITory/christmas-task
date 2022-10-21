@@ -18,6 +18,10 @@ const appState = {
     },
   },
   favorites: new Set(),
+  tree: {
+    imageNum: 1,
+    backgroundNum: 1,
+  },
 };
 
 export default appState;
