@@ -21,8 +21,17 @@ class Subject {
 }
 
 const appStateSubject = new Subject();
+const musicSubject = new Subject();
+const snowfallSubject = new Subject();
 const resetFiltersSubject = new Subject();
 const favoritesSubject = new Subject();
 const pageRouteSubject = new Subject();
 
-export { appStateSubject, resetFiltersSubject, favoritesSubject, pageRouteSubject };
+export {
+  appStateSubject,
+  musicSubject,
+  snowfallSubject,
+  resetFiltersSubject,
+  favoritesSubject,
+  pageRouteSubject,
+};

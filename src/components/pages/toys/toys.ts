@@ -81,10 +81,6 @@ class Toys {
 
     this.renderCards();
 
-    snowButton.addEventListener('click', () => {
-      snowfall.toggleShow();
-    });
-
     topLeftWrapper.append(musicButton, snowButton, search);
     bottomLeftWrapper.append(resetFiltersButton.render());
     leftContainer.append(topLeftWrapper, valueFilters, sorting, rangeFilters, bottomLeftWrapper);

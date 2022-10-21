@@ -1,18 +1,32 @@
 import './snowButton.scss';
 
 import createElement from '../../utils/createElement';
+import { snowfallSubject } from '../../subject';
 
 class SnowButton {
-  render = () => {
-    const container = createElement('button', { class: 'snow-button', type: 'button' }, [
+  container;
+
+  constructor() {
+    this.container = createElement('button', { class: 'snow-button', type: 'button' }, [
       createElement('span', { class: 'visually-hidden' }, ['Включить снегопад']),
     ]);
 
-    container.addEventListener('click', () => {
-      container.classList.toggle('snow-button--active');
-    });
+    this.addListeners();
+    snowfallSubject.subscribe(this.toggleActive);
+  }
 
-    return container;
+  toggleActive = () => {
+    this.container.classList.toggle('snow-button--active');
+  };
+
+  addListeners = () => {
+    this.container.addEventListener('click', () => {
+      snowfallSubject.notify();
+    });
+  };
+
+  render = () => {
+    return this.container;
   };
 }
 
