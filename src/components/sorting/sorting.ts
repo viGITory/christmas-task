@@ -5,14 +5,13 @@ import { appStateSubject } from '../../subject';
 
 import appState from '../../appState';
 import sortOptions from '../../data/sortOptions';
-import { IComponentProps } from '../../types';
 
 class Sorting {
   container;
 
   select;
 
-  constructor({ className = '' }: IComponentProps) {
+  constructor({ className = '' }) {
     this.container = createElement('label', { class: `${className} sorting`.trim() }, [
       'Сортировать ',
     ]);

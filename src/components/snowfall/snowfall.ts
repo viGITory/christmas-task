@@ -1,13 +1,12 @@
 import './snowfall.scss';
 
 import createElement from '../../utils/createElement';
-import { IComponentProps } from '../../types';
 import { snowfallSubject } from '../../subject';
 
 class Snowfall {
   container;
 
-  constructor({ className = '' }: IComponentProps) {
+  constructor({ className = '' }) {
     this.container = createElement('div', { class: `snowfall ${className}`.trim() });
 
     snowfallSubject.subscribe(this.toggleShow);

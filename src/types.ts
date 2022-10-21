@@ -5,10 +5,6 @@ type TRangeType = 'count' | 'year';
 type TObserverData = string;
 type TObserver = (data?: TObserverData) => void;
 
-interface IComponentProps {
-  className?: string;
-}
-
 interface IToyCard {
   num: string;
   name: string;
@@ -35,12 +31,4 @@ interface IRangeGroup {
   maxValueContainer: HTMLElement;
 }
 
-export {
-  IComponentProps,
-  IToyCard,
-  IRangeProps,
-  IRangeGroup,
-  TValueFilter,
-  TObserverData,
-  TObserver,
-};
+export { IToyCard, IRangeProps, IRangeGroup, TValueFilter, TObserverData, TObserver };

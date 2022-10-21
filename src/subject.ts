@@ -1,4 +1,4 @@
-import { TObserverData, TObserver } from './types';
+import { TObserver } from './types';
 
 class Subject {
   observers: TObserver[];
@@ -15,8 +15,8 @@ class Subject {
     this.observers = this.observers.filter((fn) => fn !== observer);
   }
 
-  notify(data?: TObserverData) {
-    this.observers.forEach((observer) => observer(data));
+  notify() {
+    this.observers.forEach((observer) => observer());
   }
 }
 

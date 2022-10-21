@@ -13,7 +13,7 @@ const router = () => {
     root.append(page);
   }
 
-  pageRouteSubject.notify(path);
+  pageRouteSubject.notify();
 };
 
 export default router;
