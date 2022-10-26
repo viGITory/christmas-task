@@ -28,6 +28,7 @@ const favoritesSubject = new Subject();
 const pageRouteSubject = new Subject();
 const treeImageSubject = new Subject();
 const treeBackgroundSubject = new Subject();
+const garlandSubject = new Subject();
 
 export {
   appStateSubject,
@@ -38,4 +39,5 @@ export {
   pageRouteSubject,
   treeImageSubject,
   treeBackgroundSubject,
+  garlandSubject,
 };

@@ -4,6 +4,7 @@ import appState from '../../../../../appState';
 
 import { treeImageSubject, treeBackgroundSubject } from '../../../../../subject';
 import createElement from '../../../../../utils/createElement';
+import garland from '../garland/garland';
 
 class MainTree {
   container;
@@ -39,7 +40,10 @@ class MainTree {
   };
 
   render = () => {
-    this.container.append(this.treeImage);
+    this.container.append(
+      createElement('div', { class: 'main-tree__wrapper' }, [this.treeImage, garland.render()])
+    );
+
     return this.container;
   };
 }

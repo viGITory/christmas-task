@@ -6,6 +6,7 @@ import MusicButton from '../../musicButton/musicButton';
 import SnowButton from '../../snowButton/snowButton';
 import treeImages from './components/treeImages/treeImages';
 import treeBackgrounds from './components/treeBackgrounds/treeBackgrounds';
+import garlandControls from './components/garlandControls/garlandControls';
 import MainTree from './components/mainTree/mainTree';
 
 import createElement from '../../../utils/createElement';
@@ -27,6 +28,7 @@ class Tree {
       ]),
       treeImages.render(),
       treeBackgrounds.render(),
+      garlandControls.render(),
     ]);
 
     mainContainer.append(leftContainer, new MainTree({ className: 'tree-page__center' }).render());

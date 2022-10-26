@@ -22,6 +22,10 @@ const appState = {
     imageNum: 1,
     backgroundNum: 1,
   },
+  garland: {
+    color: '',
+    isActive: false,
+  },
 };
 
 export default appState;

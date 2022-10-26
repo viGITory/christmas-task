@@ -1,0 +1,118 @@
+.garland {
+  flex-direction: column;
+  justify-content: space-evenly;
+  transition: opacity 0.2s;
+
+  &--hide {
+    opacity: 0;
+  }
+
+  &--yellow &__item,
+  &--multicolor &__item {
+    background-color: #ff0;
+    box-shadow: 0 0 1.2rem 0.2rem #ff0;
+  }
+
+  &--green &__item,
+  &--multicolor &__item-wrapper:nth-child(4n + 2) &__item {
+    background-color: #00f7a5;
+    box-shadow: 0 0 1.2rem 0.2rem #00f7a5;
+  }
+
+  &--red &__item,
+  &--multicolor &__item-wrapper:nth-child(2n + 1) &__item {
+    background-color: #f70076;
+    box-shadow: 0 0 1.2rem 0.2rem #f70076;
+  }
+
+  &--blue &__item,
+  &--multicolor &__item-wrapper:nth-child(3n + 1) &__item {
+    background-color: #0ff;
+    box-shadow: 0 0 1.2rem 0.2rem #0ff;
+  }
+
+  &,
+  &__row {
+    display: flex;
+  }
+
+  &,
+  &__item {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__row {
+    gap: 4%;
+    justify-content: center;
+    list-style: none;
+  }
+
+  &__item-wrapper {
+    position: relative;
+    width: 1%;
+    padding-bottom: 3%;
+
+    &::before,
+    &:not(:last-child)::after {
+      position: absolute;
+      left: 50%;
+      content: "";
+    }
+
+    &::before {
+      top: -10%;
+      z-index: 1;
+      width: 60%;
+      height: 20%;
+
+      background-color: #fff;
+      border-bottom-right-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+      transform: translateX(-50%);
+    }
+
+    &:not(:last-child)::after {
+      top: -35%;
+      width: 500%;
+      height: 50%;
+
+      border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+    }
+  }
+
+  &__item-wrapper:nth-child(2n + 1) &__item {
+    animation-duration: 0.4s;
+  }
+
+  &__item-wrapper:nth-child(3n + 1) &__item {
+    animation-duration: 1.4s;
+  }
+
+  &__item-wrapper:nth-child(4n + 2) &__item {
+    animation-duration: 1.1s;
+  }
+
+  &__item-wrapper:nth-child(odd) &__item {
+    animation-duration: 1.8s;
+  }
+
+  &__item {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    animation: garland 2s infinite;
+  }
+}
+
+@keyframes garland {
+
+  50% {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
