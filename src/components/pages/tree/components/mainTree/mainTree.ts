@@ -12,32 +12,40 @@ class MainTree {
   treeImage;
 
   constructor({ className = '' }) {
-    this.container = createElement(
-      'section',
-      {
-        class: `${className} main-tree`.trim(),
-        style: `background-image: url(assets/bg/${appState.tree.backgroundNum}.jpg)`,
-      },
-      [createElement('h3', { class: 'visually-hidden' }, ['Ёлка'])]
-    );
+    this.container = createElement('section', { class: `${className} main-tree`.trim() }, [
+      createElement('h3', { class: 'visually-hidden' }, ['Ёлка']),
+    ]);
     this.treeImage = createElement('img', {
       class: 'main-tree__image',
-      src: `./assets/tree/${appState.tree.imageNum}.png`,
       alt: 'Ёлка',
       height: '300',
     });
+
+    this.updateBackground();
+    this.updateTreeImage();
 
     treeImageSubject.subscribe(this.updateTreeImage);
     treeBackgroundSubject.subscribe(this.updateBackground);
   }
 
   updateBackground = () => {
-    this.container.style.backgroundImage = `url(./assets/bg/${appState.tree.backgroundNum}.jpg)`;
+    const img = new Image();
+    img.src = `./assets/bg/${appState.tree.backgroundNum}.jpg`;
+
+    img.addEventListener('load', () => {
+      this.container.style.backgroundImage = `url(${img.src})`;
+    });
   };
 
   updateTreeImage = () => {
-    if (this.treeImage instanceof HTMLImageElement)
-      this.treeImage.src = `./assets/tree/${appState.tree.imageNum}.png`;
+    const img = new Image();
+    img.src = `./assets/tree/${appState.tree.imageNum}.png`;
+
+    img.addEventListener('load', () => {
+      if (this.treeImage instanceof HTMLImageElement) {
+        this.treeImage.src = img.src;
+      }
+    });
   };
 
   render = () => {
