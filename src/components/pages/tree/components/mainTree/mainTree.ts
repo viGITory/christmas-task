@@ -24,6 +24,7 @@ class MainTree {
       class: 'main-tree__image',
       src: `./assets/tree/${appState.tree.imageNum}.png`,
       alt: 'Ёлка',
+      height: '300',
     });
 
     treeImageSubject.subscribe(this.updateTreeImage);

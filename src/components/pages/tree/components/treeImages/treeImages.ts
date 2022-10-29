@@ -18,6 +18,7 @@ class TreeImages {
         class: 'tree-images__image',
         src: `./assets/tree/${i}.png`,
         alt: `Ёлка ${i}`,
+        height: '300',
       });
 
       if (i === appState.tree.imageNum) listItem.classList.add('tree-images__item--active');

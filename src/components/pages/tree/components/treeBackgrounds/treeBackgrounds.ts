@@ -18,6 +18,7 @@ class TreeBackgrounds {
         class: 'tree-backgrounds__image',
         src: `./assets/bg/${i}.jpg`,
         alt: `Фон ${i}`,
+        height: '300',
       });
 
       if (i === appState.tree.backgroundNum)
