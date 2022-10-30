@@ -15,7 +15,17 @@ class Sorting {
     this.container = createElement('label', { class: `${className} sorting`.trim() }, [
       'Сортировать ',
     ]);
-    this.select = createElement('select', { class: 'sorting__select' });
+    this.select = createElement('select', { class: 'sorting__select' }, [
+      createElement(
+        'option',
+        {
+          class: 'sorting__option',
+          selected: `${true}`,
+          disabled: `${true}`,
+        },
+        ['-- Выберите тип --']
+      ),
+    ]);
 
     this.addListeners();
   }
@@ -30,7 +40,6 @@ class Sorting {
     });
 
     this.container.append(this.select);
-
     return this.container;
   };
 
