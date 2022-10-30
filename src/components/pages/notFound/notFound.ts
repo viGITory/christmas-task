@@ -1,6 +1,6 @@
 import './notFound.scss';
 
-import Snowfall from '../../snowfall/snowfall';
+import Snowfall from '../../common/snowfall/snowfall';
 
 import createElement from '../../../utils/createElement';
 

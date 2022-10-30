@@ -1,15 +1,15 @@
 import './toys.scss';
 
-import Snowfall from '../../snowfall/snowfall';
-import Header from '../../header/header';
-import MusicButton from '../../musicButton/musicButton';
-import SnowButton from '../../snowButton/snowButton';
-import Search from '../../search/search';
-import ValueFilters from '../../valueFilters/valueFilters';
-import Sorting from '../../sorting/sorting';
-import RangeFilters from '../../rangeFilters/rangeFilters';
-import resetFiltersButton from '../../resetFiltersButton/resetFiltersButton';
-import ToyCard from '../../toyCard/toyCard';
+import Snowfall from '../../common/snowfall/snowfall';
+import Header from '../../common/header/header';
+import MusicButton from '../../common/musicButton/musicButton';
+import SnowButton from '../../common/snowButton/snowButton';
+import Search from './components/search/search';
+import ValueFilters from './components/valueFilters/valueFilters';
+import Sorting from './components/sorting/sorting';
+import RangeFilters from './components/rangeFilters/rangeFilters';
+import resetFiltersButton from './components/resetFiltersButton/resetFiltersButton';
+import ToyCard from './components/toyCard/toyCard';
 
 import createElement from '../../../utils/createElement';
 import searchToy from '../../../utils/searchToy';

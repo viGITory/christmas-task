@@ -3,11 +3,11 @@ import './rangeFilters.scss';
 
 import * as noUiSlider from 'nouislider';
 
-import { IToyCard, IRangeProps, IRangeGroup } from '../../types';
-import appState from '../../appState';
+import { IToyCard, IRangeProps, IRangeGroup } from '../../../../../types';
+import appState from '../../../../../appState';
 
-import createElement from '../../utils/createElement';
-import { appStateSubject, resetFiltersSubject } from '../../subject';
+import createElement from '../../../../../utils/createElement';
+import { appStateSubject, resetFiltersSubject } from '../../../../../subject';
 
 class RangeFilters {
   data;

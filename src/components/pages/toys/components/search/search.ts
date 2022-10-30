@@ -1,9 +1,9 @@
 import './search.scss';
 
-import createElement from '../../utils/createElement';
-import { appStateSubject } from '../../subject';
+import createElement from '../../../../../utils/createElement';
+import { appStateSubject } from '../../../../../subject';
 
-import appState from '../../appState';
+import appState from '../../../../../appState';
 
 class Search {
   render = () => {

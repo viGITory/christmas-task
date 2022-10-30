@@ -1,7 +1,7 @@
 import './snowfall.scss';
 
-import createElement from '../../utils/createElement';
-import { snowfallSubject } from '../../subject';
+import createElement from '../../../utils/createElement';
+import { snowfallSubject } from '../../../subject';
 
 class Snowfall {
   container;

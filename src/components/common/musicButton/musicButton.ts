@@ -1,7 +1,7 @@
 import './musicButton.scss';
 
-import createElement from '../../utils/createElement';
-import { musicSubject } from '../../subject';
+import createElement from '../../../utils/createElement';
+import { musicSubject } from '../../../subject';
 
 class MusicButton {
   container;

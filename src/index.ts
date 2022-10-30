@@ -1,6 +1,6 @@
 import './index.scss';
 
-import Preloader from './components/preloader/preloader';
+import Preloader from './components/common/preloader/preloader';
 import router from './router/router';
 
 const { body } = document;

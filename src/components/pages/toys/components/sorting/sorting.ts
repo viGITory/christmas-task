@@ -1,10 +1,10 @@
 import './sorting.scss';
 
-import createElement from '../../utils/createElement';
-import { appStateSubject } from '../../subject';
+import createElement from '../../../../../utils/createElement';
+import { appStateSubject } from '../../../../../subject';
 
-import appState from '../../appState';
-import sortOptions from '../../data/sortOptions';
+import appState from '../../../../../appState';
+import sortOptions from '../../../../../data/sortOptions';
 
 class Sorting {
   container;

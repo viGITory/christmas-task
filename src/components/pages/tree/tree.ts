@@ -1,9 +1,9 @@
 import './tree.scss';
 
-import Snowfall from '../../snowfall/snowfall';
-import Header from '../../header/header';
-import MusicButton from '../../musicButton/musicButton';
-import SnowButton from '../../snowButton/snowButton';
+import Snowfall from '../../common/snowfall/snowfall';
+import Header from '../../common/header/header';
+import MusicButton from '../../common/musicButton/musicButton';
+import SnowButton from '../../common/snowButton/snowButton';
 import treeImages from './components/treeImages/treeImages';
 import treeBackgrounds from './components/treeBackgrounds/treeBackgrounds';
 import garlandControls from './components/garlandControls/garlandControls';

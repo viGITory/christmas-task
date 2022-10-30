@@ -1,8 +1,8 @@
 import './resetFiltersButton.scss';
 
-import appState from '../../appState';
-import { appStateSubject, resetFiltersSubject } from '../../subject';
-import createElement from '../../utils/createElement';
+import appState from '../../../../../appState';
+import { appStateSubject, resetFiltersSubject } from '../../../../../subject';
+import createElement from '../../../../../utils/createElement';
 
 class ResetFiltersButton {
   render = () => {

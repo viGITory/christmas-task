@@ -1,10 +1,10 @@
 import './toyCard.scss';
 
-import { IToyCard } from '../../types';
+import { IToyCard } from '../../../../../types';
 
-import createElement from '../../utils/createElement';
-import appState from '../../appState';
-import { favoritesSubject } from '../../subject';
+import createElement from '../../../../../utils/createElement';
+import appState from '../../../../../appState';
+import { favoritesSubject } from '../../../../../subject';
 
 class ToyCard {
   data;

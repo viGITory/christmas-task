@@ -1,8 +1,8 @@
 import './header.scss';
 
-import createElement from '../../utils/createElement';
-import { favoritesSubject, pageRouteSubject } from '../../subject';
-import appState from '../../appState';
+import createElement from '../../../utils/createElement';
+import { favoritesSubject, pageRouteSubject } from '../../../subject';
+import appState from '../../../appState';
 
 class Header {
   navLinks: HTMLAnchorElement[];

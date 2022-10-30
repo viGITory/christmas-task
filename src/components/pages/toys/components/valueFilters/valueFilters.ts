@@ -1,10 +1,10 @@
 import './valueFilters.scss';
 
-import { IToyCard, TValueFilter } from '../../types';
-import appState from '../../appState';
+import { IToyCard, TValueFilter } from '../../../../../types';
+import appState from '../../../../../appState';
 
-import createElement from '../../utils/createElement';
-import { appStateSubject, resetFiltersSubject } from '../../subject';
+import createElement from '../../../../../utils/createElement';
+import { appStateSubject, resetFiltersSubject } from '../../../../../subject';
 
 class ValueFilters {
   data;
