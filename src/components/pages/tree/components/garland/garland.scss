@@ -1,6 +1,8 @@
 .garland {
   flex-direction: column;
   justify-content: space-evenly;
+
+  pointer-events: none;
   transition: opacity 0.2s;
 
   &--hide {

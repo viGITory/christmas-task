@@ -13,10 +13,7 @@
 
   transition: opacity 0.2s;
 
-  &:hover {
-    opacity: 0.6;
-  }
-
+  &:hover,
   &--active {
     opacity: 1;
   }
