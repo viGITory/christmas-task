@@ -8,10 +8,18 @@ import treeImages from './components/treeImages/treeImages';
 import treeBackgrounds from './components/treeBackgrounds/treeBackgrounds';
 import garlandControls from './components/garlandControls/garlandControls';
 import MainTree from './components/mainTree/mainTree';
+import Favorites from './components/favorites/favorites';
 
 import createElement from '../../../utils/createElement';
+import decorations from '../../../data/decorations';
 
 class Tree {
+  toysData;
+
+  constructor() {
+    this.toysData = decorations;
+  }
+
   render = () => {
     const container = createElement('div', { class: 'tree-page' }, [
       new Snowfall({ className: 'snowfall--hide' }).render(),
@@ -31,7 +39,11 @@ class Tree {
       garlandControls.render(),
     ]);
 
-    mainContainer.append(leftContainer, new MainTree({ className: 'tree-page__center' }).render());
+    mainContainer.append(
+      leftContainer,
+      new MainTree({ className: 'tree-page__center' }).render(),
+      new Favorites(this.toysData).render()
+    );
     container.append(mainContainer);
 
     return container;

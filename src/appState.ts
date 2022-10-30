@@ -21,6 +21,7 @@ const appState = {
   tree: {
     imageNum: 1,
     backgroundNum: 1,
+    isDragOverMap: false,
   },
   garland: {
     color: '',
