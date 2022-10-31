@@ -20,8 +20,8 @@ class Sorting {
         'option',
         {
           class: 'sorting__option',
-          selected: `${true}`,
-          disabled: `${true}`,
+          selected: '',
+          disabled: '',
         },
         ['-- Выберите тип --']
       ),

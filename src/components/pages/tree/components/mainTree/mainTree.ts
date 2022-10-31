@@ -23,6 +23,7 @@ class MainTree {
       alt: 'Ёлка',
       coords: '248,50,159,279,84,472,29,620,83,651,149,662,248,664,331,661,389,651,455,625',
       shape: 'poly',
+      href: '',
     });
     this.treeImage = createElement('img', {
       class: 'main-tree__image',
@@ -64,6 +65,10 @@ class MainTree {
   };
 
   addListeners = () => {
+    this.mapArea.addEventListener('click', (event) => {
+      event.preventDefault();
+    });
+
     this.mapArea.addEventListener('dragover', (event) => {
       event.preventDefault();
       appState.tree.isDragOverMap = true;
