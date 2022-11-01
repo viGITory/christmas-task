@@ -14,7 +14,7 @@ class ResetFiltersButton {
       appState.filters.shape.clear();
       appState.filters.color.clear();
       appState.filters.size.clear();
-      appState.filters.favorite = false;
+      appState.filters.isFavorite = false;
 
       resetFiltersSubject.notify();
       appStateSubject.notify();

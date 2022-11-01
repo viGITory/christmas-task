@@ -51,7 +51,7 @@ class ValueFilters {
 
       checkbox.addEventListener('input', () => {
         if (checkbox instanceof HTMLInputElement) {
-          if (isFavoriteFilter) appState.filters.favorite = checkbox.checked;
+          if (isFavoriteFilter) appState.filters.isFavorite = checkbox.checked;
           else if (checkbox.checked) appState.filters[filterType].add(value);
           else appState.filters[filterType].delete(value);
 

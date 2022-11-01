@@ -3,7 +3,7 @@ const appState = {
     shape: new Set(),
     color: new Set(),
     size: new Set(),
-    favorite: false,
+    isFavorite: false,
   },
   sorting: '',
   search: '',
