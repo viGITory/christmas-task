@@ -29,7 +29,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Christmas-task',
-      favicon: `${paths.public}/favicon.ico`,
+      favicon: `${paths.public}/favicon.svg`,
       template: `${paths.src}/template.html`,
       filename: 'index.html',
     }),
