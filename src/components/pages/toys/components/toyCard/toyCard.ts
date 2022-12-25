@@ -26,7 +26,7 @@ class ToyCard {
           <div class="toy-card__wrapper">
             <img class="toy-card__image" src="/assets/toys/${this.data.num}.png" alt="${
       this.data.name
-    }">
+    }" loading="lazy">
             <div class="toy-card__count-wrapper">
               <span class="toy-card__favorite"></span>
               <span class="toy-card__count">${this.data.count} шт.</span>
