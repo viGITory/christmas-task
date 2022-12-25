@@ -17,6 +17,11 @@
     position: relative;
     width: 16rem;
     height: 16rem;
+
+    background-image: url("assets/preloader-tree.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 10rem;
   }
 
   &__inner div {
@@ -24,9 +29,7 @@
     width: 1.2rem;
     height: 1.2rem;
 
-    background-color: #fff;
     border-radius: 50%;
-
     animation: preloader 1.2s linear infinite;
   }
 
@@ -100,6 +103,18 @@
     top: 1rem;
     left: 3.7rem;
     animation-delay: 1.1s;
+  }
+
+  &__inner div:nth-child(3n + 1) {
+    background-color: #ff0;
+  }
+
+  &__inner div:nth-child(3n + 2) {
+    background-color: #00f7a5;
+  }
+
+  &__inner div:nth-child(3n + 3) {
+    background-color: #f70076;
   }
 }
 
