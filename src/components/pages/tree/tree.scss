@@ -1,7 +1,11 @@
+@import "../../../mixins";
+
 .tree-page {
   display: grid;
   grid-template-rows: auto 1fr;
   min-height: 100%;
+
+  @include primary-background();
 
   &__main,
   &__left,

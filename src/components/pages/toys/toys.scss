@@ -1,5 +1,9 @@
+@import "../../../mixins";
+
 .toys-page {
   min-height: 100%;
+
+  @include primary-background();
 
   &__main,
   &__left-wrapper,
