@@ -16,7 +16,7 @@ class TreeBackgrounds {
       const listItem = createElement('li', { class: 'tree-backgrounds__item' });
       const itemImage = createElement('img', {
         class: 'tree-backgrounds__image',
-        src: `./assets/bg/${i}.jpg`,
+        src: `./assets/webp/bg/${i}.webp`,
         alt: `Фон ${i}`,
         height: '300',
       });

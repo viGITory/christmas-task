@@ -46,7 +46,7 @@ class MainTree {
 
   updateBackground = () => {
     const img = new Image();
-    img.src = `./assets/bg/${appState.tree.backgroundNum}.jpg`;
+    img.src = `./assets/webp/bg/${appState.tree.backgroundNum}.webp`;
 
     img.addEventListener('load', () => {
       this.container.style.backgroundImage = `url(${img.src})`;
@@ -55,7 +55,7 @@ class MainTree {
 
   updateTreeImage = () => {
     const img = new Image();
-    img.src = `./assets/tree/${appState.tree.imageNum}.png`;
+    img.src = `./assets/webp/tree/${appState.tree.imageNum}.webp`;
 
     img.addEventListener('load', () => {
       if (this.treeImage instanceof HTMLImageElement) {

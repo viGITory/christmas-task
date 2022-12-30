@@ -16,7 +16,7 @@ class TreeImages {
       const listItem = createElement('li', { class: 'tree-images__item' });
       const itemImage = createElement('img', {
         class: 'tree-images__image',
-        src: `./assets/tree/${i}.png`,
+        src: `./assets/webp/tree/${i}.webp`,
         alt: `Ёлка ${i}`,
         height: '300',
       });

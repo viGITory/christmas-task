@@ -32,7 +32,7 @@ class Favorites {
         while (toysContainer.children.length < +toy.count) {
           const itemImage = createElement('img', {
             class: 'favorites__image',
-            src: `./assets/toys/${toy.num}.png`,
+            src: `./assets/webp/toys/${toy.num}.webp`,
             alt: toy.name,
             height: '50',
             id: `${toy.num}-${imageCount}`,

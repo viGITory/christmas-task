@@ -24,7 +24,7 @@ class ToyCard {
         <div class="toy-card__content">
           <h3 class="toy-card__title">${this.data.name}</h3>
           <div class="toy-card__wrapper">
-            <img class="toy-card__image" src="/assets/toys/${this.data.num}.png" alt="${
+            <img class="toy-card__image" src="/assets/webp/toys/${this.data.num}.webp" alt="${
       this.data.name
     }" loading="lazy">
             <div class="toy-card__count-wrapper">
